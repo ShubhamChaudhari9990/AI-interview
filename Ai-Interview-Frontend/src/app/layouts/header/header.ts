@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-header',
   standalone: true,
   templateUrl: './header.html',
-  styleUrls: ['./header.scss']
+  styleUrls: ['./header.css']
 })
 export class Header {}

@@ -9,6 +9,6 @@ import { Footer } from '../footer/footer';
   imports: [CommonModule, RouterOutlet, Header, Footer],
   standalone: true,
   templateUrl: './main-layout.html',
-  styleUrl: './main-layout.scss',
+  styleUrl: './main-layout.css',
 })
 export class MainLayout {}
