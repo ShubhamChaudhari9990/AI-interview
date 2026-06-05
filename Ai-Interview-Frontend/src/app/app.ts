@@ -7,7 +7,7 @@ import { MainLayout } from './layouts/main-layout/main-layout';
   imports: [MainLayout],
   standalone: true,
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('Ai-Interview-Frontend');
