@@ -1,0 +1,4 @@
+/* Header-specific small tweaks (kept minimal - Tailwind handles most styles) */
+:host {
+  display: block;
+}
