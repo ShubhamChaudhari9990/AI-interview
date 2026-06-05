@@ -1,5 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, signal } from '@angular/core';
-import {  } from '@angular/router'
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { } from '@angular/router';
 import { MainLayout } from './layouts/main-layout/main-layout';
 
 @Component({
@@ -10,6 +10,4 @@ import { MainLayout } from './layouts/main-layout/main-layout';
   styleUrls: ['./app.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class App {
-  protected readonly title = signal('Ai-Interview-Frontend');
-}
+export class App {}

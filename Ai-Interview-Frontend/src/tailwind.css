@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+/* Tell Tailwind v4 where to scan for utility classes in Angular templates */
+@source "./app/**/*.html";
+@source "./app/**/*.ts";
