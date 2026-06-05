@@ -1,14 +1,10 @@
-import { Component, signal } from '@angular/core';
-import {  } from '@angular/router'
-import { MainLayout } from './layouts/main-layout/main-layout';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [MainLayout],
-  standalone: true,
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  imports: [RouterOutlet],
+  template: '<router-outlet />',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App {
-  protected readonly title = signal('Ai-Interview-Frontend');
-}
+export class App {}
