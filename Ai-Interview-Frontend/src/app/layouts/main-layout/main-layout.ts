@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
@@ -9,6 +9,7 @@ import { Footer } from '../footer/footer';
   imports: [CommonModule, RouterOutlet, Header, Footer],
   standalone: true,
   templateUrl: './main-layout.html',
-  styleUrl: './main-layout.css',
+  styleUrls: ['./main-layout.css'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MainLayout {}
