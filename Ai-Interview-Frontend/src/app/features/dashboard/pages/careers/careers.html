@@ -1,0 +1,113 @@
+<section class="bg-slate-50 py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span
+          class="inline-flex px-3 py-1 rounded-full bg-indigo-100 text-indigo-600 text-xs font-semibold"
+        >
+          {{ heroSection.badge }}
+        </span>
+
+        <h1 class="mt-5 text-5xl font-bold leading-tight text-slate-900">
+          {{ heroSection.title }}
+
+          <span class="text-indigo-600">
+            {{ heroSection.highlightedText }}
+          </span>
+        </h1>
+
+        <p class="mt-6 text-slate-500 leading-7 max-w-lg">
+          {{ heroSection.description }}
+        </p>
+
+        <div class="flex gap-4 mt-8">
+          <button class="bg-indigo-600 text-white px-6 py-3 rounded-lg">View Open Roles</button>
+
+          <button class="border border-slate-300 px-6 py-3 rounded-lg">Life at InterviewAI</button>
+        </div>
+      </div>
+
+      <div>
+        <img [src]="heroSection.image" class="w-full rounded-2xl shadow-lg object-cover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold">Life at InterviewAI</h2>
+
+      <p class="text-slate-500 mt-4">Transparency, precision and human-centric innovation.</p>
+    </div>
+
+    <div class="grid grid-cols-12 gap-4">
+      <!-- Large Left Image -->
+
+      <div class="col-span-12 lg:col-span-6">
+        <div class="relative h-full">
+          <img [src]="workplaceImages[0].image" class="rounded-xl w-full h-full object-cover" />
+
+          <div class="absolute bottom-4 left-4 text-white">
+            <h4 class="font-semibold">
+              {{ workplaceImages[0].title }}
+            </h4>
+
+            <p class="text-sm">
+              {{ workplaceImages[0].subtitle }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Grid -->
+
+      <div class="col-span-12 lg:col-span-6 grid grid-cols-2 gap-4">
+        @for (image of workplaceImages.slice(1); track image.image) {
+          <div class="relative">
+            <img [src]="image.image" class="rounded-xl w-full h-full object-cover" />
+
+            @if (image.title) {
+              <div class="absolute bottom-4 left-4 text-white">
+                <h4 class="font-semibold">
+                  {{ image.title }}
+                </h4>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-slate-50 py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold">Benefits that empower you</h2>
+
+      <p class="text-slate-500 mt-4">
+        We believe in taking care of our team so they can take care of our customers.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      @for (benefit of benefits; track benefit.title) {
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div class="text-3xl">
+            {{ benefit.icon }}
+          </div>
+
+          <h3 class="mt-5 text-xl font-semibold">
+            {{ benefit.title }}
+          </h3>
+
+          <p class="mt-3 text-slate-500 leading-6">
+            {{ benefit.description }}
+          </p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,199 @@
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    @for (section of featureHighlights; track section.title; let i = $index) {
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
+        <!-- Alternate Layout -->
+        <ng-container
+          [ngTemplateOutlet]="i % 2 === 0 ? contentFirst : imageFirst"
+          [ngTemplateOutletContext]="{ section: section }"
+        >
+        </ng-container>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Content First -->
+<ng-template #contentFirst let-section="section">
+  <div>
+    <p class="text-xs font-semibold uppercase tracking-widest text-indigo-600">
+      {{ section.tag }}
+    </p>
+
+    <h2 class="text-4xl font-bold mt-3">
+      {{ section.title }}
+    </h2>
+
+    <p class="mt-4 text-gray-600 leading-7">
+      {{ section.description }}
+    </p>
+
+    @if (section.features) {
+      <div class="space-y-4 mt-8">
+        @for (feature of section.features; track feature.title) {
+          <div class="bg-white rounded-xl p-5 shadow-sm">
+            <div class="flex gap-4">
+              <span class="text-xl">
+                {{ feature.icon }}
+              </span>
+
+              <div>
+                <h4 class="font-semibold">
+                  {{ feature.title }}
+                </h4>
+
+                <p class="text-sm text-gray-500 mt-1">
+                  {{ feature.description }}
+                </p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+
+    @if (section.stats) {
+      <div class="grid grid-cols-2 gap-4 mt-8">
+        @for (stat of section.stats; track stat.label) {
+          <div class="bg-white rounded-xl p-5">
+            <div class="text-indigo-600 font-bold text-xl">
+              {{ stat.value }}
+            </div>
+
+            <div class="text-sm text-gray-500">
+              {{ stat.label }}
+            </div>
+          </div>
+        }
+      </div>
+    }
+
+    @if (section.linkText) {
+      <a href="#" class="inline-flex items-center gap-2 mt-6 text-indigo-600 font-medium">
+        {{ section.linkText }}
+        →
+      </a>
+    }
+  </div>
+
+  <div>
+    <img [src]="section.image" [alt]="section.title" class="w-full rounded-2xl shadow-lg" />
+  </div>
+</ng-template>
+
+<!-- Image First -->
+<ng-template #imageFirst let-section="section">
+  <div>
+    <img [src]="section.image" [alt]="section.title" class="w-full rounded-2xl shadow-lg" />
+  </div>
+
+  <div>
+    <p class="text-xs font-semibold uppercase tracking-widest text-indigo-600">
+      {{ section.tag }}
+    </p>
+
+    <h2 class="text-4xl font-bold mt-3">
+      {{ section.title }}
+    </h2>
+
+    <p class="mt-4 text-gray-600 leading-7">
+      {{ section.description }}
+    </p>
+
+    <div class="grid grid-cols-2 gap-4 mt-8">
+      @for (stat of section.stats ?? []; track stat.label) {
+        <div class="bg-white rounded-xl p-5">
+          <div class="text-indigo-600 font-bold text-xl">
+            {{ stat.value }}
+          </div>
+
+          <div class="text-sm text-gray-500">
+            {{ stat.label }}
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</ng-template>
+
+<section class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center">
+      <h2 class="text-4xl font-bold">
+        {{ resumeSection.title }}
+      </h2>
+
+      <p class="mt-4 text-slate-500 max-w-2xl mx-auto">
+        {{ resumeSection.subtitle }}
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-16">
+      @for (feature of resumeSection.features; track feature.title) {
+        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition">
+          <div class="text-3xl mb-5">
+            {{ feature.icon }}
+          </div>
+
+          <h3 class="text-xl font-semibold">
+            {{ feature.title }}
+          </h3>
+
+          <p class="mt-3 text-slate-500">
+            {{ feature.description }}
+          </p>
+        </div>
+      }
+    </div>
+    <div class="grid lg:grid-cols-2 gap-8 mt-10">
+      <div class="bg-white rounded-2xl p-8 flex flex-col justify-center">
+        <h3 class="text-3xl font-bold">Performance Analytics</h3>
+
+        <p class="mt-4 text-slate-500">
+          Visualize your entire hiring pipeline with predictive analytics.
+        </p>
+      </div>
+
+      <div class="bg-indigo-600 rounded-2xl p-8 text-white">
+        <div class="text-6xl font-bold">
+          {{ resumeSection.analytics.percentage }}
+        </div>
+
+        <h4 class="mt-4 text-2xl font-semibold">
+          {{ resumeSection.analytics.title }}
+        </h4>
+
+        <p class="mt-4 text-indigo-100">
+          {{ resumeSection.analytics.description }}
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
+      @for (insight of resumeSection.insights; track insight.title) {
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <div class="text-2xl mb-4">
+            {{ insight.icon }}
+          </div>
+
+          <h3 class="font-semibold text-lg">
+            {{ insight.title }}
+          </h3>
+
+          <p class="mt-3 text-slate-500">
+            {{ insight.description }}
+          </p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta-banner
+  title="Ready to master your next interview?"
+  description="Join over 50,000 candidates who have landed their dream jobs using InterviewAI's intelligent coaching platform."
+  primaryButtonText="Get Started Now"
+  secondaryButtonText="Schedule a Demo"
+  primaryButtonLink="/register"
+  secondaryButtonLink="/contact"
+>
+</app-cta-banner>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CtaBanner } from '../../../../shared/components/cta-banner/cta-banner';
 
 interface Feature {
   title: string;
@@ -28,7 +29,7 @@ interface FaqItem {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,CtaBanner],
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
 })

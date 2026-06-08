@@ -1,0 +1,150 @@
+<section class="bg-slate-50 min-h-screen py-10">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Featured Blog -->
+    <div class="grid lg:grid-cols-[1.3fr_1fr] gap-0 bg-white rounded-2xl overflow-hidden shadow-sm">
+      <div>
+        <img
+          [src]="featuredPost.image"
+          [alt]="featuredPost.title"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div class="p-10 flex flex-col justify-center">
+        <span
+          class="inline-flex px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-600"
+        >
+          AI TECH • FEATURED
+        </span>
+
+        <h1 class="mt-5 text-5xl font-bold leading-tight text-slate-900">
+          {{ featuredPost.title }}
+        </h1>
+
+        <p class="mt-6 text-slate-500 leading-7">
+          {{ featuredPost.description }}
+        </p>
+
+        <div class="flex items-center gap-4 mt-8">
+          <img
+            [src]="featuredPost.authorImage"
+            [alt]="featuredPost.author"
+            class="w-12 h-12 rounded-full object-cover"
+          />
+
+          <div>
+            <h3 class="font-semibold text-slate-900">
+              {{ featuredPost.author }}
+            </h3>
+
+            <p class="text-sm text-slate-500">
+              {{ featuredPost.role }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+
+    <div class="flex flex-col lg:flex-row justify-between items-center gap-6 mt-10">
+      <div class="flex flex-wrap gap-3">
+        @for (category of categories; track category.id) {
+          <button
+            class="px-5 py-2 rounded-full text-sm transition"
+            [class.bg-indigo-600]="category.active"
+            [class.text-white]="category.active"
+            [class.bg-white]="!category.active"
+            [class.border]="!category.active"
+          >
+            {{ category.name }}
+          </button>
+        }
+      </div>
+
+      <div class="relative">
+        <input
+          type="text"
+          placeholder="Search insights..."
+          class="w-72 bg-white border border-slate-200 rounded-full py-3 pl-5 pr-10"
+        />
+
+        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"> 🔍 </span>
+      </div>
+    </div>
+
+    <!-- Blog Grid -->
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+      @for (post of blogPosts; track post.id) {
+        <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+          <img [src]="post.image" [alt]="post.title" class="h-56 w-full object-cover" />
+
+          <div class="p-6">
+            <span class="text-xs uppercase tracking-wider text-indigo-600 font-semibold">
+              {{ post.category }}
+            </span>
+
+            <h3 class="mt-3 text-xl font-semibold text-slate-900">
+              {{ post.title }}
+            </h3>
+
+            <p class="mt-3 text-slate-500 leading-6">
+              {{ post.description }}
+            </p>
+
+            <div class="flex justify-between items-center mt-6">
+              <span class="text-sm text-slate-400">
+                {{ post.readTime }}
+              </span>
+
+              <button class="text-indigo-600 text-xl">→</button>
+            </div>
+          </div>
+        </article>
+      }
+
+      <!-- Newsletter Card -->
+
+      <div class="bg-indigo-600 rounded-2xl p-8 text-white flex flex-col justify-center">
+        <div>
+          <div class="text-3xl mb-4">✨</div>
+
+          <h3 class="text-3xl font-bold">Subscribe to AI Insights</h3>
+
+          <p class="mt-4 text-indigo-100 leading-7">
+            Get the latest trends in AI, recruitment, and technology delivered to your inbox.
+          </p>
+        </div>
+
+        <input
+          type="email"
+          placeholder="work@company.com"
+          class="mt-8 bg-white rounded-lg px-4 py-3 text-slate-900"
+        />
+
+        <button class="mt-4 bg-white text-indigo-600 py-3 rounded-lg font-semibold">
+          Join Newsletter
+        </button>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+
+    <div class="flex justify-center items-center gap-2 mt-16">
+      <button class="w-10 h-10 rounded-lg border bg-white">‹</button>
+
+      <button class="w-10 h-10 rounded-lg bg-indigo-600 text-white">1</button>
+
+      <button class="w-10 h-10 rounded-lg border bg-white">2</button>
+
+      <button class="w-10 h-10 rounded-lg border bg-white">3</button>
+
+      <span class="px-2 text-slate-500"> ... </span>
+
+      <button class="w-10 h-10 rounded-lg border bg-white">12</button>
+
+      <button class="w-10 h-10 rounded-lg border bg-white">›</button>
+    </div>
+  </div>
+</section>
