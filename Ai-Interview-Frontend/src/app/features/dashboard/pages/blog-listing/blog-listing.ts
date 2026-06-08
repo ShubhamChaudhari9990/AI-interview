@@ -22,12 +22,12 @@ export class BlogListing {
   ];
 
   featuredPost: FeaturedBlog = {
-    image: 'assets/images/blog/featured.jpg',
+    image: 'assets/blog-listing/blog-head.webp',
     title: 'Mastering the Future: How AI is Redefining Technical Interviews',
-    description: 'Explore the transformative impact of generative AI on candidate assessment.',
+    description: 'Explore the transformative impact of generative AI on candidate assessment, from real-time coding analysis to bias mitigation in global hiring workflows.',
     author: 'Dr. Sarah Chen',
     role: 'Chief AI Officer',
-    authorImage: 'assets/images/team/sarah.jpg',
+    authorImage: 'assets/blog-listing/profile.webp',
   };
 
   blogPosts: BlogPost[] = [
@@ -36,7 +36,7 @@ export class BlogListing {
       category: 'Career Growth',
       title: '10 Soft Skills Every AI-Era Manager Needs',
       description: 'Learn essential leadership skills.',
-      image: 'assets/images/blog/blog-1.jpg',
+      image: 'assets/blog-listing/blog-head.webp',
       readTime: '6 min read',
     },
     {
@@ -44,7 +44,7 @@ export class BlogListing {
       category: 'Interview Tips',
       title: 'The Perfect Prompt: Navigating AI Interviews',
       description: 'Master AI-powered interviews.',
-      image: 'assets/images/blog/blog-2.jpg',
+      image: 'assets/blog-listing/blog-head.webp',
       readTime: '8 min read',
     },
     {
@@ -52,7 +52,7 @@ export class BlogListing {
       category: 'Hiring Strategy',
       title: 'Scaling Your Team with Precision',
       description: 'Optimize hiring with AI.',
-      image: 'assets/images/blog/blog-3.jpg',
+      image: 'assets/blog-listing/blog-head.webp',
       readTime: '12 min read',
     },
     {
@@ -60,7 +60,7 @@ export class BlogListing {
       category: 'AI Tech',
       title: 'Beyond the Algorithm: Ethical AI',
       description: 'Building responsible AI systems.',
-      image: 'assets/images/blog/blog-4.jpg',
+      image: 'assets/blog-listing/blog-head.webp',
       readTime: '5 min read',
     },
     {
@@ -68,7 +68,7 @@ export class BlogListing {
       category: 'Industry News',
       title: '2024 State of Tech Recruitment',
       description: 'Latest trends and hiring insights.',
-      image: 'assets/images/blog/blog-5.jpg',
+      image: 'assets/blog-listing/blog-head.webp',
       readTime: '10 min read',
     },
   ];
