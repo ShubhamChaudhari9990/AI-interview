@@ -11,20 +11,15 @@ import { BlogArticle } from '../../../../shared/interfaces/blog.interfaces';
 export class Blog {
   article: BlogArticle = {
     category: 'ARTIFICIAL INTELLIGENCE',
-
     title: 'The Future of AI in Recruitment: Balancing Efficiency and Empathy',
-
     description:
       'Exploring how AI is transforming recruitment while maintaining human-centered hiring.',
-
     author: {
       name: 'Elena Chen',
       role: 'Head of Research',
-      avatar: 'assets/images/authors/elena.jpg',
+      avatar: 'assets/blog-listing/profile.webp',
     },
-
-    heroImage: 'assets/images/blog/ai-recruitment.jpg',
-
+    heroImage: 'assets/blog-listing/blog-head.webp',
     sections: [
       {
         heading: 'The Shift from Screening to Selection',
@@ -42,19 +37,19 @@ export class Blog {
     relatedArticles: [
       {
         title: 'Reducing Time-to-Hire with Predictive Analytics',
-        image: 'assets/images/blog/blog-1.jpg',
+        image: 'assets/careers/pexels-yankrukov-7698712.webp',
         category: 'Analytics',
         publishDate: 'March 2025',
       },
       {
         title: 'How to Write Better Job Descriptions',
-        image: 'assets/images/blog/blog-2.jpg',
+        image: 'assets/careers/pexels-yankrukov-7698712.webp',
         category: 'Recruitment',
         publishDate: 'April 2025',
       },
       {
         title: 'The Ethical Implications of AI',
-        image: 'assets/images/blog/blog-3.jpg',
+        image: 'assets/careers/pexels-yankrukov-7698712.webp',
         category: 'AI Ethics',
         publishDate: 'May 2025',
       },
