@@ -1,0 +1,70 @@
+<section
+  class="min-h-screen flex flex-col items-center bg-gradient-to-br from-indigo-50 via-white to-purple-50 px-4 py-10"
+  style="font-family: 'Inter', sans-serif;"
+>
+  <!-- Logo -->
+  <h1 class="text-[#3525CD] text-2xl font-bold tracking-tight mb-10">
+    InterviewAI
+  </h1>
+
+  <!-- Card -->
+  <div
+    class="w-[500px] max-w-full h-[511px] rounded-xl border border-[#FFFFFF66] bg-white/80 px-8 pt-10 text-center shadow-[0px_1px_2px_0px_#0000000D] backdrop-blur-[12px]"
+  >
+    <!-- Envelope icon -->
+    <div class="flex justify-center mb-4">
+      <div class="relative">
+        <div class="absolute -bottom-1 -left-2 w-8 h-8 rounded-full bg-blue-200/40 blur-md pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute -top-1 -right-2 w-6 h-6 rounded-full bg-green-200/50 blur-md pointer-events-none" aria-hidden="true"></div>
+        <div class="relative w-16 h-16 rounded-full bg-[#3525CD] flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-[32px] leading-[40px] tracking-[-0.32px] font-semibold text-gray-900 mb-8">
+      Check your inbox
+    </h2>
+    <p class="text-base leading-6 text-gray-500 mb-10">
+      We've sent a recovery link to your email address. It should arrive in a few minutes.
+    </p>
+
+    <a
+      routerLink="/auth/login"
+      class="inline-flex items-center justify-center gap-2 w-full h-[60px] bg-[#3525CD] hover:bg-[#2a1da4] text-white font-medium rounded-lg transition-colors duration-150 mb-10"
+    >
+      Go to Login
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+      </svg>
+    </a>
+
+    <div class="border-t border-[#C7C4D84D] pt-[30px] pb-[30px] space-y-1.5">
+      <p class="text-xs leading-4 tracking-[0.24px] font-medium text-gray-500 text-center">
+        Didn't receive the email?
+        <button
+          type="button"
+          (click)="onResendLink()"
+          class="text-[#3525CD] hover:underline cursor-pointer"
+        >
+          Resend Link
+        </button>
+      </p>
+      <p class="text-xs leading-4 tracking-[0.24px] font-medium text-gray-500 text-center">
+        Check your spam folder or contact
+        <a href="#" class="text-[#3525CD] hover:underline">Support</a>.
+      </p>
+    </div>
+  </div>
+
+  <!-- Context image -->
+  <div class="mt-6 w-[500px] max-w-full h-[120px] rounded-xl overflow-hidden border border-gray-100">
+    <img
+      src="assets/login_Page/Context Image.svg"
+      alt="InterviewAI dashboard preview"
+      class="w-full h-full object-cover"
+    />
+  </div>
+</section>
