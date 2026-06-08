@@ -77,68 +77,112 @@
 
     <!-- Blog Grid -->
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
       @for (post of blogPosts; track post.id) {
-        <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
-          <img [src]="post.image" [alt]="post.title" class="h-56 w-full object-cover" />
+        @if (!post.isNewsletter) {
+          <article
+            class="bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-lg transition-all duration-300"
+          >
+            <img [src]="post.image" [alt]="post.title" class="w-full h-52 object-cover" />
 
-          <div class="p-6">
-            <span class="text-xs uppercase tracking-wider text-indigo-600 font-semibold">
-              {{ post.category }}
-            </span>
-
-            <h3 class="mt-3 text-xl font-semibold text-slate-900">
-              {{ post.title }}
-            </h3>
-
-            <p class="mt-3 text-slate-500 leading-6">
-              {{ post.description }}
-            </p>
-
-            <div class="flex justify-between items-center mt-6">
-              <span class="text-sm text-slate-400">
-                {{ post.readTime }}
+            <div class="p-5 flex flex-col h-62.5">
+              <span class="text-[11px] uppercase tracking-[1.5px] font-bold text-indigo-600">
+                {{ post.category }}
               </span>
+              <h3 class="mt-2 text-[24px] leading-8 font-semibold text-[#191C1E]">
+                {{ post.title }}
+              </h3>
+              <p class="mt-3 text-sm leading-6 flex-1 text-[#464554] text-[18px]">
+                {{ post.description }}
+              </p>
 
-              <button class="text-indigo-600 text-xl">→</button>
+              <div class="flex items-center justify-between pt-5">
+                <span class="text-[12px] font-medium text-[#464555]">
+                  {{ post.readTime }}
+                </span>
+
+                <button
+                  class="text-indigo-600 hover:translate-x-1 transition-transform duration-200"
+                  aria-label="Read More"
+                >
+                  <img src="assets/icons/blue-right-arrow.svg" alt="" class="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </article>
+        } @else {
+          <!-- Newsletter Card -->
+
+          <div
+            class="rounded-2xl bg-linear-to-br from-indigo-600 to-indigo-500 p-8 text-white flex flex-col justify-center min-h-125"
+          >
+            <div class="text-center">
+              <div class="text-4xl mb-8">✨</div>
+
+              <h3 class="text-3xl font-semibold leading-tight">Subscribe to AI Insights</h3>
+
+              <p class="mt-5 text-indigo-100 text-sm leading-6">
+                Get the latest trends in AI technology and AI hiring delivered directly to your
+                inbox every Tuesday.
+              </p>
+            </div>
+
+            <div class="mt-8">
+              <input
+                type="email"
+                placeholder="work@company.com"
+                class="w-full h-12 rounded-lg px-4 text-slate-900 bg-white/20 border border-white/20 placeholder:text-indigo-100 outline-none"
+              />
+
+              <button
+                class="w-full mt-4 h-12 rounded-lg bg-white text-indigo-600 font-semibold hover:bg-slate-100 transition"
+              >
+                Join Newsletter
+              </button>
             </div>
           </div>
-        </article>
+        }
       }
-
-      <!-- Newsletter Card -->
-
-      <div class="bg-indigo-600 rounded-2xl p-8 text-white flex flex-col justify-center">
-        <div>
-          <div class="text-3xl mb-4">✨</div>
-          <h3 class="text-3xl font-bold">Subscribe to AI Insights</h3>
-          <p class="mt-4 text-indigo-100 leading-7">
-            Get the latest trends in AI, recruitment, and technology delivered to your inbox.
-          </p>
-        </div>
-
-        <input
-          type="email"
-          placeholder="work@company.com"
-          class="mt-8 bg-white rounded-lg px-4 py-3 text-slate-900"
-        />
-
-        <button class="mt-4 bg-white text-indigo-600 py-3 rounded-lg font-semibold">
-          Join Newsletter
-        </button>
-      </div>
     </div>
 
     <!-- Pagination -->
 
-    <div class="flex justify-center items-center gap-2 mt-16">
-      <button class="w-10 h-10 rounded-lg border bg-white">‹</button>
-      <button class="w-10 h-10 rounded-lg bg-indigo-600 text-white">1</button>
-      <button class="w-10 h-10 rounded-lg border bg-white">2</button>
-      <button class="w-10 h-10 rounded-lg border bg-white">3</button>
-      <span class="px-2 text-slate-500"> ... </span>
-      <button class="w-10 h-10 rounded-lg border bg-white">12</button>
-      <button class="w-10 h-10 rounded-lg border bg-white">›</button>
+    <div class="flex items-center justify-center mt-16">
+      <button
+        class="h-9 w-9 text-[#4B5563] flex items-center justify-center hover:bg-[#E5E7EB] transition"
+      >
+        ‹
+      </button>
+
+      <button class="h-9 w-9 bg-[#4338CA] text-white rounded-lg flex items-center justify-center">
+        1
+      </button>
+
+      <button
+        class="h-9 w-9 text-[#4B5563] flex items-center justify-center hover:bg-[#E5E7EB] transition"
+      >
+        2
+      </button>
+
+      <button
+        class="h-9 w-9 text-[#4B5563] flex items-center justify-center hover:bg-[#E5E7EB] transition"
+      >
+        3
+      </button>
+
+      <span class="h-9 w-9 text-[#4B5563] flex items-center justify-center"> ... </span>
+
+      <button
+        class="h-9 w-9 text-[#4B5563] flex items-center justify-center hover:bg-[#E5E7EB] transition"
+      >
+        12
+      </button>
+
+      <button
+        class="h-9 w-9 text-[#4B5563] flex items-center justify-center hover:bg-[#E5E7EB] transition"
+      >
+        ›
+      </button>
     </div>
   </div>
 </section>

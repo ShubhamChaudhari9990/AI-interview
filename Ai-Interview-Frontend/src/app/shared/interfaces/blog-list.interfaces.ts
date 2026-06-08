@@ -6,11 +6,12 @@ export interface BlogCategory {
 
 export interface BlogPost {
   id: number;
-  category: string;
+  category?: string;
   title: string;
-  description: string;
-  image: string;
-  readTime: string;
+  description?: string;
+  image?: string;
+  readTime?: string;
+  isNewsletter?: boolean;
 }
 
 export interface FeaturedBlog {

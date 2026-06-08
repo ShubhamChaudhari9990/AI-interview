@@ -2,36 +2,48 @@
   <div class="max-w-6xl mx-auto px-6">
     <!-- Header -->
     <div class="text-center">
-      <h1 class="text-5xl font-bold text-slate-900">How can we help?</h1>
-
-      <p class="mt-4 text-slate-500 max-w-2xl mx-auto">
-        Browse our knowledge base or search for answers.
+      <h1 class="text-[48px] leading-[57.6px] font-bold text-[#191C1E]">How can we help?</h1>
+      <p class="mt-4 mx-auto max-w-100px text-center text-[16px] leading-6 text-[#464554]">
+        Search our knowledge base or browse categories below to find answers to common questions
+        about InterviewAI.
       </p>
 
-      <div class="max-w-3xl mx-auto mt-8">
+      <div class="max-w-4xl mx-auto mt-8 relative">
         <input
           type="text"
-          placeholder="Search for answers..."
-          class="w-full border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          placeholder="Search for questions, features, or topics..."
+          class="w-full h-20 rounded-xl border border-[#D1D5DB] bg-white pl-7 pr-24 text-sm text-[#191C1E] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
+        <div class="absolute right-4 top-1/2 flex -translate-y-1/2 items-center gap-1">
+          <span
+            class="flex h-5 min-w-8 items-center justify-center rounded border border-[#D1D5DB] bg-[#F9FAFB] px-1 text-[10px] font-medium text-[#6B7280]"
+          >
+            CMD
+          </span>
+          <span
+            class="flex h-5 w-5 items-center justify-center rounded border border-[#D1D5DB] bg-[#F9FAFB] text-[10px] font-medium text-[#6B7280]"
+          >
+            K
+          </span>
+        </div>
       </div>
     </div>
 
     <!-- Categories -->
-    <div class="grid md:grid-cols-4 gap-5 mt-10">
+    <div class="grid md:grid-cols-4 gap-5 mt-10 justify-center">
       @for (category of categories; track category.title) {
         <div
-          class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition"
+          class="w-68 h-48.5 bg-white rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition"
         >
           <div class="text-2xl">
             {{ category.icon }}
           </div>
 
-          <h3 class="mt-4 font-semibold">
+          <h3 class="mt-4 text-[20px] leading-7 font-semibold text-[#191C1E]">
             {{ category.title }}
           </h3>
 
-          <p class="text-sm text-slate-500 mt-2">
+          <p class="mt-2 text-[16px] leading-6 text-[#464555]">
             {{ category.description }}
           </p>
         </div>
@@ -42,7 +54,9 @@
     <div class="mt-16">
       @for (section of faqSections; track section.title; let sectionIndex = $index) {
         <div class="mb-12">
-          <h2 class="text-2xl font-bold mb-6 border-l-4 border-indigo-600 pl-4">
+          <h2
+            class="text-2xl font-bold mb-6 border-l-4 border-[#005523] pl-4 text-[32px] leading-7 text-[#191C1E]"
+          >
             {{ section.title }}
           </h2>
 
@@ -53,17 +67,17 @@
                   class="w-full flex justify-between items-center p-5 text-left"
                   (click)="toggleFaq(sectionIndex, faqIndex)"
                 >
-                  <span class="font-medium">
+                  <span class="font-semibold text-[#191C1E] text-[18px]">
                     {{ faq.question }}
                   </span>
 
-                  <span class="text-xl text-slate-400">
+                  <span class="text-xl text-[#777587] text-[16px]">
                     {{ faq.isOpen ? '−' : '+' }}
                   </span>
                 </button>
 
                 @if (faq.isOpen) {
-                  <div class="px-5 pb-5 text-slate-500">
+                  <div class="px-5 pb-5 text-[#464555] text-[14px] leading-6">
                     {{ faq.answer }}
                   </div>
                 }
@@ -76,23 +90,46 @@
 
     <!-- CTA Section -->
     <div
-      class="bg-white rounded-2xl p-8 mt-16 flex flex-col md:flex-row justify-between items-center gap-6 shadow-sm"
+      class="mt-16 mx-auto max-w-300 rounded-3xl bg-linear-to-r from-[#F5F8FA] to-[#F3F0FF] px-8 py-10 md:px-16 md:py-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_4px_20px_rgba(15,23,42,0.04)]"
     >
-      <div>
-        <h3 class="text-2xl font-bold">Still have questions?</h3>
+      <!-- Left Section -->
+      <div class="flex-1">
+        <h2 class="text-[36px] leading-[43.2px] font-bold text-[#191C1E]">Still have questions?</h2>
 
-        <p class="text-slate-500 mt-2">Our support team is ready to help.</p>
+        <p class="mt-4 max-w-150 text-[14px] leading-6 text-[#464554]">
+          We're here to help! Our support team is available 24/7 to answer any technical, billing,
+          or platform-related questions you may have.
+        </p>
+
+        <div class="mt-5 flex flex-wrap items-center gap-6">
+          <a
+            href="mailto:support@interviewai.com"
+            class="flex items-center gap-1 text-[14px] font-medium text-[#3525CD]"
+          >
+            <img src="assets/icons/mail.svg" alt="" class="h-4 w-4" />
+            support@interviewai.com
+          </a>
+
+          <a
+            href="tel:+18002414463"
+            class="flex items-center gap-1 text-[14px] font-medium text-[#4338CA]"
+          >
+            <img src="assets/icons/phone.svg" alt="" class="h-4 w-4" />
+            +1 (800) AI-HIÉ
+          </a>
+        </div>
       </div>
 
-      <div class="flex flex-wrap gap-4">
+      <!-- Right Section -->
+      <div class="flex flex-wrap items-center gap-4">
         <button
-          class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition"
+          class="h-12 min-w-30 rounded-[10px] bg-[#4338CA] px-6 text-[14px] font-medium text-white transition hover:bg-[#3730A3]"
         >
+
           Chat with Us
         </button>
-
         <button
-          class="border border-indigo-600 text-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-50 transition"
+          class="h-12 min-w-30 rounded-[10px] border border-[#6D5EF9] bg-transparent px-6 text-[14px] font-medium text-[#4338CA] transition hover:bg-white/50"
         >
           Contact Sales
         </button>
