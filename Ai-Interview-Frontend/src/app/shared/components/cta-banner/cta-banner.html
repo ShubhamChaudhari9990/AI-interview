@@ -1,0 +1,29 @@
+<section class="py-8">
+  <div class="max-w-6xl mx-auto bg-[#4F46E5] rounded-lg px-8 md:px-12 py-12 text-center">
+    <h2 class="text-white text-3xl font-semibold">
+      {{ title }}
+    </h2>
+
+    <p class="mt-4 text-indigo-100 text-sm max-w-2xl mx-auto">
+      {{ description }}
+    </p>
+
+    <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+      <a
+        [routerLink]="primaryButtonLink"
+        class="bg-white text-indigo-700 px-8 py-3 rounded-md text-sm font-medium"
+      >
+        {{ primaryButtonText }}
+      </a>
+
+      @if (showSecondaryButton) {
+        <a
+          [routerLink]="secondaryButtonLink"
+          class="border border-white/50 text-white px-8 py-3 rounded-md text-sm font-medium"
+        >
+          {{ secondaryButtonText }}
+        </a>
+      }
+    </div>
+  </div>
+</section>

@@ -1,57 +1,446 @@
-<section class="py-16">
-  <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-    <div class="space-y-6">
-      <span class="inline-block text-sm font-medium text-brand-700 bg-brand-50 px-3 py-1 rounded-full">AI Interview</span>
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Master Your Interviews with Generative AI</h1>
-      <p class="text-slate-600 max-w-xl">Practice interview questions, get real-time feedback, and improve your answers with AI-powered guidance tailored to your role.</p>
+<!-- HERO SECTION -->
+<section class="bg-[#F5F5FA] min-h-screen flex items-center">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left Content -->
+      <div>
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium border border-indigo-200"
+        >
+          <span class="w-2 h-2 bg-indigo-600 rounded-full"></span>
+          New: Coding Challenges 2.0
+        </div>
 
-      <div class="flex items-center gap-4">
-        <a class="inline-flex items-center gap-2 bg-brand-600 text-white px-5 py-3 rounded-lg hover:bg-brand-700" href="#">Start Mocking Now</a>
-        <a class="text-sm text-slate-700 hover:text-brand-700" href="#">Watch Demo</a>
+        <!-- Heading -->
+        <h1 class="mt-8 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
+          Master Your Interviews
+          <br />
+          with
+          <span class="text-indigo-600"> Generative AI </span>
+        </h1>
+
+        <!-- Description -->
+        <p class="mt-6 text-lg text-gray-600 leading-relaxed max-w-xl">
+          Practice with industry-specific mock interviews, receive real-time behavioral feedback,
+          and optimize your coding performance using our state-of-the-art AI coach.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-10 flex flex-wrap gap-4">
+          <button
+            (click)="startPractice()"
+            class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg shadow-indigo-300/50 transition"
+          >
+            Start Practicing Free
+          </button>
+
+          <button
+            (click)="watchDemo()"
+            class="bg-white border border-gray-300 hover:border-indigo-300 px-8 py-4 rounded-xl font-semibold text-indigo-600 flex items-center gap-2 transition"
+          >
+            Watch Demo
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <circle cx="12" cy="12" r="10" stroke-width="2" />
+              <path d="M10 8L16 12L10 16V8Z" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="mt-12 flex items-center gap-4">
+          <div class="flex -space-x-3">
+            <img
+              src="https://i.pravatar.cc/40?img=1"
+              class="w-10 h-10 rounded-full border-2 border-white"
+            />
+
+            <img
+              src="https://i.pravatar.cc/40?img=2"
+              class="w-10 h-10 rounded-full border-2 border-white"
+            />
+
+            <img
+              src="https://i.pravatar.cc/40?img=3"
+              class="w-10 h-10 rounded-full border-2 border-white"
+            />
+          </div>
+
+          <p class="text-sm text-gray-700 font-medium">
+            <span class="font-bold">12,000+</span>
+            candidates placed this month
+          </p>
+        </div>
       </div>
 
-      <div class="flex items-center gap-6 text-sm text-slate-500 mt-6">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center">85%</div>
-          <div>
-            <div class="font-bold">Success rate</div>
-            <div class="text-xs">for prepared candidates</div>
-          </div>
+      <!-- Right Image -->
+      <div class="relative">
+        <div class="bg-white p-5 rounded-[30px] shadow-2xl rotate-2">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900"
+            alt="AI Dashboard"
+            class="rounded-2xl w-full h-auto object-cover"
+          />
         </div>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center">40k+</div>
-          <div>
-            <div class="font-bold">Users</div>
-            <div class="text-xs">trusted us</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="flex justify-center">
-      <div class="w-full max-w-md">
-        <div class="bg-white rounded-2xl shadow-lg p-6">
-          <img src="/public/hero-mock.png" alt="hero" class="rounded-lg w-full h-auto object-cover" />
+        <div
+          class="absolute bottom-4 left-0 bg-white rounded-2xl px-5 py-3 shadow-xl flex items-center gap-3"
+        >
+          <div
+            class="w-7 h-7 rounded-full bg-green-600 text-white flex items-center justify-center"
+          >
+            ✓
+          </div>
+
+          <span class="font-semibold text-gray-800"> Confidence Score: 94% </span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Features section -->
-<section class="py-12 bg-slate-50">
-  <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="card p-6">
-      <h3 class="font-semibold mb-2">AI Mock Interviews</h3>
-      <p class="text-sm text-slate-600">Realistic interview simulations with tailored feedback.</p>
+<!-- FEATURES SECTION -->
+
+<section class="bg-[#F8F9FC] py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Companies -->
+    <div class="text-center mb-20">
+      <p class="uppercase tracking-[4px] text-xs font-semibold text-gray-500 mb-8">
+        Empowering teams at world-class companies
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-10 md:gap-16 text-gray-400 font-bold">
+        @for (company of companies; track company) {
+          <span>{{ company }}</span>
+        }
+      </div>
     </div>
-    <div class="card p-6">
-      <h3 class="font-semibold mb-2">Resume Analysis</h3>
-      <p class="text-sm text-slate-600">Get suggestions to improve your resume for specific roles.</p>
+
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900">
+        Everything you need to
+        <span class="text-indigo-600">excel</span>
+      </h2>
+
+      <p class="mt-5 text-lg text-gray-600">
+        Our AI-driven toolkit simulates real-world interview scenarios to build your confidence and
+        skills.
+      </p>
     </div>
-    <div class="card p-6">
-      <h3 class="font-semibold mb-2">Real-Time Feedback</h3>
-      <p class="text-sm text-slate-600">Receive actionable tips during your mock interviews.</p>
+
+    <!-- Feature Cards -->
+    <div class="grid lg:grid-cols-3 gap-6">
+      @for (feature of features; track feature.title) {
+        <div
+          (click)="selectFeature(feature)"
+          class="bg-white rounded-3xl p-8 cursor-pointer border border-gray-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
+        >
+          <div
+            class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-6"
+            [ngClass]="feature.color"
+          >
+            {{ feature.icon }}
+          </div>
+
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">
+            {{ feature.title }}
+          </h3>
+
+          <p class="text-gray-600">
+            {{ feature.description }}
+          </p>
+        </div>
+      }
+    </div>
+
+    <!-- Selected Feature Details -->
+    @if (selectedFeature) {
+      <div class="mt-12 bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+        <div class="flex items-center gap-4 mb-4">
+          <div
+            class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl"
+            [ngClass]="selectedFeature.color"
+          >
+            {{ selectedFeature.icon }}
+          </div>
+
+          <h3 class="text-3xl font-bold">
+            {{ selectedFeature.title }}
+          </h3>
+        </div>
+
+        <p class="text-gray-600 text-lg leading-relaxed">
+          {{ selectedFeature.details }}
+        </p>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- new -->
+
+<section class="bg-[#F5F5FA] py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left Content -->
+      <div>
+        <h2 class="text-4xl lg:text-5xl font-bold leading-tight text-gray-900 mb-12">
+          How to master your interview in
+          <span class="text-indigo-600">3 simple steps</span>
+        </h2>
+
+        <!-- Step 1 -->
+        <div class="flex gap-5 mb-10">
+          <div
+            class="w-12 h-12 min-w-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-lg"
+          >
+            1
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Choose Your Track</h3>
+
+            <p class="text-gray-600 leading-relaxed">
+              Select from Software Engineering, Product Management, Marketing, or specialized
+              interview paths.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex gap-5 mb-10">
+          <div
+            class="w-12 h-12 min-w-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-lg"
+          >
+            2
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Simulate the Session</h3>
+
+            <p class="text-gray-600 leading-relaxed">
+              Engage in a full-length video or text-based interview session with our adaptive AI
+              interviewer.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex gap-5">
+          <div
+            class="w-12 h-12 min-w-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-lg"
+          >
+            3
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Review Performance</h3>
+
+            <p class="text-gray-600 leading-relaxed">
+              Receive a detailed breakdown of your performance with actionable tips and personalized
+              resources.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="relative">
+        <div class="bg-white p-4 rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.12)]">
+          <div class="rounded-[18px] overflow-hidden bg-linear-to-br from-slate-100 to-slate-200">
+            <img
+              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=900"
+              alt="Interview App"
+              class="w-full h-130 object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 mt-24 pt-14 border-t border-gray-200">
+      <div class="text-center">
+        <h3 class="text-5xl font-bold text-indigo-600 mb-3">85%</h3>
+        <p class="uppercase tracking-[2px] text-xs font-semibold text-gray-500">
+          Hiring Success Rate
+        </p>
+      </div>
+
+      <div class="text-center">
+        <h3 class="text-5xl font-bold text-indigo-600 mb-3">40k+</h3>
+        <p class="uppercase tracking-[2px] text-xs font-semibold text-gray-500">
+          Interviews Hosted
+        </p>
+      </div>
+
+      <div class="text-center">
+        <h3 class="text-5xl font-bold text-indigo-600 mb-3">120</h3>
+        <p class="uppercase tracking-[2px] text-xs font-semibold text-gray-500">Industry Tracks</p>
+      </div>
+
+      <div class="text-center">
+        <h3 class="text-5xl font-bold text-indigo-600 mb-3">4.9/5</h3>
+        <p class="uppercase tracking-[2px] text-xs font-semibold text-gray-500">User Rating</p>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- new-2 -->
+
+<section class="bg-[#F5F5FA] py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-bold text-slate-900">Plans for every career stage</h2>
+
+      <p class="mt-4 text-lg text-slate-500">
+        Simple, transparent pricing to help you land your dream job.
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid lg:grid-cols-3 gap-8">
+      @for (plan of plans; track plan.name) {
+        <div
+          class="relative bg-white rounded-[28px] p-8 border border-slate-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+          [class.border-indigo-600]="plan.popular"
+          [class.border-2]="plan.popular"
+        >
+          <!-- Popular Badge -->
+          @if (plan.popular) {
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-xs font-semibold px-4 py-1 rounded-full"
+            >
+              MOST POPULAR
+            </div>
+          }
+
+          <!-- Title -->
+          <h3 class="text-4xl font-bold text-slate-900">
+            {{ plan.name }}
+          </h3>
+
+          <p class="mt-2 text-slate-500">
+            {{ plan.description }}
+          </p>
+
+          <!-- Price -->
+          <div class="mt-8 flex items-end gap-1">
+            <span class="text-6xl font-bold text-slate-900">
+              {{ plan.price }}
+            </span>
+
+            @if (plan.duration) {
+              <span class="text-slate-500 mb-2">
+                {{ plan.duration }}
+              </span>
+            }
+          </div>
+
+          <!-- Features -->
+          <ul class="mt-8 space-y-5">
+            @for (feature of plan.features; track feature) {
+              <li class="flex items-center gap-3">
+                <div
+                  class="w-5 h-5 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs"
+                >
+                  ✓
+                </div>
+
+                <span class="text-slate-700">
+                  {{ feature }}
+                </span>
+              </li>
+            }
+          </ul>
+
+          <!-- Button -->
+          <button
+            class="w-full mt-10 py-4 rounded-xl font-semibold transition-all duration-300"
+            [ngClass]="{
+              'bg-indigo-600 text-white shadow-lg hover:bg-indigo-700': plan.popular,
+              'border border-slate-400 text-slate-800 hover:bg-slate-50': !plan.popular,
+            }"
+          >
+            {{ plan.buttonText }}
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- new3 -->
+
+<section class="bg-[#F5F5FA] py-24">
+  <div class="max-w-4xl mx-auto px-6">
+    <!-- Heading -->
+    <h2 class="text-4xl md:text-5xl font-bold text-center text-slate-900 mb-14">
+      Frequently Asked Questions
+    </h2>
+
+    <!-- FAQ Items -->
+    <div class="space-y-5">
+      @for (faq of faqs; track faq.question; let i = $index) {
+        <div
+          class="bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300"
+        >
+          <!-- Question -->
+          <button
+            (click)="toggleFaq(i)"
+            class="w-full flex items-center justify-between px-6 py-6 text-left"
+          >
+            <span class="text-lg font-semibold text-slate-900">
+              {{ faq.question }}
+            </span>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 transition-transform duration-300"
+              [class.rotate-180]="faq.isOpen"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+
+          <!-- Answer -->
+          @if (faq.isOpen) {
+            <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+              {{ faq.answer }}
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+
+  <app-cta-banner
+    title="Ready to master your next interview?"
+    description="Join over 50,000 candidates who have landed their dream jobs using InterviewAI's intelligent coaching platform."
+    primaryButtonText="Get Started Now"
+    secondaryButtonText="Schedule a Demo"
+    primaryButtonLink="/register"
+    secondaryButtonLink="/contact"
+  >
+  </app-cta-banner>
 </section>

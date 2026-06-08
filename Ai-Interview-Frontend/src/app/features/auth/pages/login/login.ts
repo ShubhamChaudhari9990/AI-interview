@@ -10,7 +10,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../../../core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,8 @@ import { RouterLink } from '@angular/router';
 })
 export class Login {
   private readonly fb = inject(FormBuilder);
+  private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
 
   protected readonly showPassword = signal(false);
 
@@ -56,13 +59,20 @@ export class Login {
       this.form.markAllAsTouched();
       return;
     }
-    // TODO: dispatch to AuthService
-    const { email, password, rememberMe } = this.form.getRawValue();
-    console.log({ email, password, rememberMe });
+
+    const { email, password } = this.form.getRawValue();
+
+    this.authService
+      .login(email!, password!)
+      .then(() => this.router.navigate(['/home']))
+      .catch((error) => console.error('Email login failed:', error));
   }
 
   protected onGoogleSignIn(): void {
-    // TODO: integrate Google OAuth provider
+    this.authService
+      .googleLogin()
+      .then(() => this.router.navigate(['/home']))
+      .catch((error) => console.error('Google sign-in failed:', error));
   }
 
   protected onGithubSignIn(): void {

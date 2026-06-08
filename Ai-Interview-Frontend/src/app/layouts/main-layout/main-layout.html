@@ -1,7 +1,9 @@
-<app-header></app-header>
+<app-header *ngIf="showLayout"></app-header>
 
-<main class="container mx-auto py-12">
+<main>
 	<router-outlet></router-outlet>
 </main>
 
-<app-footer></app-footer>
+@if(showLayout){
+	<app-footer></app-footer>
+}

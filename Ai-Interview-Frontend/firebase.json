@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/Ai-Interview-Frontend/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

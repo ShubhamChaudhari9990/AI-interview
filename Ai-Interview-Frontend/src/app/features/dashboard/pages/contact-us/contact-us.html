@@ -1,0 +1,111 @@
+<section class="bg-slate-50 py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Heading -->
+    <div class="mb-12">
+      <h2 class="font-bold text-[#191C1E] text-[48px]">Let's Connect</h2>
+
+      <p class="text-[#464555] mt-3">
+        Our team is here to help you scale your recruitment with precision-engineered AI tools.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10">
+      <!-- LEFT SECTION -->
+      <div>
+        <div class="space-y-4">
+          @for (info of contactInfo; track info.title) {
+            <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm">
+              <div class="flex gap-4">
+                <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EEF0FF]">
+                  <lucide-angular [img]="info.icon" class="h-4 w-4 text-[#3525CD]"></lucide-angular>
+                </div>
+
+                <div>
+                  <h3 class="font-semibold text-[#191C1E] text-[18px]">
+                    {{ info.title }}
+                  </h3>
+
+                  <p class="text-[#464555] text-sm mt-1">
+                    {{ info.value }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Map Image -->
+
+        <div class="mt-6 overflow-hidden rounded-2xl shadow-sm">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8711.757438649332!2d73.95513610134718!3d18.556402930708884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3c755f66221%3A0x26747f83a92137be!2sScalar%20Techhub!5e1!3m2!1sen!2sin!4v1780917111195!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- RIGHT SECTION -->
+
+      <div class="bg-white rounded-2xl p-8 shadow-sm min-h-136.5 lg:h-136.5">
+        <form class="space-y-5">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm mb-2 text-[#464555] text-[16px]"> First Name </label>
+              <input type="text" class="w-full border border-slate-200 rounded-lg px-4 py-3" />
+            </div>
+
+            <div>
+              <label class="block text-sm mb-2 text-[#464555] text-[16px]"> Last Name </label>
+              <input type="text" class="w-full border border-slate-200 rounded-lg px-4 py-3" />
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm mb-2 text-[#464555] text-[16px]"> Email </label>
+              <input type="email" class="w-full border border-slate-200 rounded-lg px-4 py-3" />
+            </div>
+
+            <div>
+              <label class="block text-sm mb-2 text-[#464555] text-[16px]"> Company </label>
+              <input type="text" class="w-full border border-slate-200 rounded-lg px-4 py-3" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm mb-2 text-[#464555] text-[16px]"> Message </label>
+            <textarea rows="6" class="w-full border border-slate-200 rounded-lg px-4 py-3">
+            </textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-medium">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+      @for (link of quickLinks; track link.title) {
+        <div
+          class="bg-white rounded-xl p-5 min-h-20 shadow-sm hover:shadow-md transition flex items-center justify-center text-center gap-3"
+        >
+          <div class="flex h-5 w-10 items-center justify-center rounded-xl bg-[#EEF0FF]">
+            <lucide-angular [img]="link.icon" class="h-5 w-5 text-[#4F46E5]"></lucide-angular>
+          </div>
+
+          <h3 class="font-semibold text-[#191C1E] text-[16px]">
+            {{ link.title }}
+          </h3>
+        </div>
+      }
+    </div>
+  </div>
+</section>
