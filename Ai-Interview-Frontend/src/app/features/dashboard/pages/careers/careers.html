@@ -1,91 +1,138 @@
-<section class="bg-slate-50 py-20">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+<section class="bg-slate-50 py-15">
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="grid items-center gap-16 lg:grid-cols-2">
+      <!-- Left Content -->
       <div>
         <span
-          class="inline-flex px-3 py-1 rounded-full bg-indigo-100 text-indigo-600 text-xs font-semibold"
+          class="inline-flex rounded-full bg-indigo-100 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-indigo-600"
         >
           {{ heroSection.badge }}
         </span>
 
-        <h1 class="mt-5 text-5xl font-bold leading-tight text-slate-900">
+        <h1
+          class="mt-6 text-[42px] font-bold leading-[57.6px] tracking-[-0.03em] text-[#191C1E] md:text-[36px] lg:text-[48px]"
+        >
           {{ heroSection.title }}
+          <br />
 
-          <span class="text-indigo-600">
+          <span class="italic text-indigo-600">
             {{ heroSection.highlightedText }}
           </span>
+
+          collaboration.
         </h1>
 
-        <p class="mt-6 text-slate-500 leading-7 max-w-lg">
+        <p class="mt-6 max-w-md text-[20px] leading-[27.6px] text-[#464554]">
           {{ heroSection.description }}
         </p>
 
-        <div class="flex gap-4 mt-8">
-          <button class="bg-indigo-600 text-white px-6 py-3 rounded-lg">View Open Roles</button>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <button
+            class="w-56 rounded-xl bg-[#3525CD] px-8 py-4 font-medium text-white transition-all duration-300 hover:bg-[#3730A3] hover:shadow-lg"
+          >
+            View Open Roles
+          </button>
 
-          <button class="border border-slate-300 px-6 py-3 rounded-lg">Life at InterviewAI</button>
+          <button
+            class="w-56 rounded-xl border border-slate-300 bg-white px-8 py-4 font-medium text-indigo-600 transition-all duration-300 hover:bg-slate-100"
+          >
+            Life at InterviewAI
+          </button>
         </div>
       </div>
 
-      <div>
-        <img [src]="heroSection.image" class="w-full rounded-2xl shadow-lg object-cover" />
+      <!-- Right Image -->
+      <div class="relative flex justify-center lg:justify-end">
+        <div
+          class="w-full max-w-xl h-81 overflow-hidden rounded-3xl bg-white shadow-2xl ring-1 ring-slate-200"
+        >
+          <img
+            [src]="heroSection.image"
+            [alt]="heroSection.title"
+            class="h-full w-full object-cover"
+          />
+        </div>
+
+        <div
+          class="absolute -bottom-6 -right-6 -z-10 h-40 w-40 rounded-full bg-indigo-200 opacity-40 blur-3xl"
+        ></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-24">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-14">
-      <h2 class="text-4xl font-bold">Life at InterviewAI</h2>
+<section class="py-16">
+  <div class="mx-auto max-w-7xl px-6">
+    <!-- Header -->
+    <div class="mb-14 text-center">
+      <h2 class="text-[32px] font-semibold text-[#191C1E]">Life at InterviewAI</h2>
 
-      <p class="text-slate-500 mt-4">Transparency, precision and human-centric innovation.</p>
+      <p class="mt-4 text-[#464554] text-[16px]">
+        Transparency, precision and human-centric innovation.
+      </p>
     </div>
 
-    <div class="grid grid-cols-12 gap-4">
-      <!-- Large Left Image -->
+    <!-- Gallery -->
+    <div class="grid gap-4 lg:grid-cols-2">
+      <!-- Left Large Image -->
+      <div class="relative h-125 overflow-hidden rounded-2xl">
+        <img [src]="workplaceImages[0].image" class="h-full w-full object-cover" alt="" />
 
-      <div class="col-span-12 lg:col-span-6">
-        <div class="relative h-full">
-          <img [src]="workplaceImages[0].image" class="rounded-xl w-full h-full object-cover" />
+        <div
+          class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/30 to-transparent p-5"
+        >
+          <h4 class="text-sm font-medium text-white">
+            {{ workplaceImages[0].title }}
+          </h4>
 
-          <div class="absolute bottom-4 left-4 text-white">
-            <h4 class="font-semibold">
-              {{ workplaceImages[0].title }}
+          <p class="mt-1 text-xs text-white/80">
+            {{ workplaceImages[0].subtitle }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="grid gap-4">
+        <!-- Top Wide Image -->
+        <div class="relative h-60.5 overflow-hidden rounded-2xl">
+          <img [src]="workplaceImages[1].image" class="h-full w-full object-cover" alt="" />
+
+          <div
+            class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/20 to-transparent p-5"
+          >
+            <h4 class="text-sm font-medium text-white">
+              {{ workplaceImages[1].title }}
             </h4>
-
-            <p class="text-sm">
-              {{ workplaceImages[0].subtitle }}
-            </p>
           </div>
         </div>
-      </div>
 
-      <!-- Right Grid -->
+        <!-- Bottom Images -->
+        <div class="grid grid-cols-2 gap-4">
+          @for (image of workplaceImages.slice(2); track image.image) {
+            <div class="relative h-60.5 overflow-hidden rounded-2xl">
+              <img [src]="image.image" class="h-full w-full object-cover" alt="" />
 
-      <div class="col-span-12 lg:col-span-6 grid grid-cols-2 gap-4">
-        @for (image of workplaceImages.slice(1); track image.image) {
-          <div class="relative">
-            <img [src]="image.image" class="rounded-xl w-full h-full object-cover" />
-
-            @if (image.title) {
-              <div class="absolute bottom-4 left-4 text-white">
-                <h4 class="font-semibold">
-                  {{ image.title }}
-                </h4>
-              </div>
-            }
-          </div>
-        }
+              @if (image.title) {
+                <div
+                  class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/20 to-transparent p-4"
+                >
+                  <h4 class="text-sm font-medium text-white">
+                    {{ image.title }}
+                  </h4>
+                </div>
+              }
+            </div>
+          }
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="bg-slate-50 py-24">
+<section class="bg-slate-50 py-16">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-14">
-      <h2 class="text-4xl font-bold">Benefits that empower you</h2>
+      <h2 class="text-[32px] font-semibold text-[#191C1E]">Benefits that empower you</h2>
 
       <p class="text-slate-500 mt-4">
         We believe in taking care of our team so they can take care of our customers.
@@ -106,6 +153,78 @@
           <p class="mt-3 text-slate-500 leading-6">
             {{ benefit.description }}
           </p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="bg-[#f8f8f8] min-h-screen py-16">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <!-- Header -->
+    <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+      <div>
+        <h1 class="text-[40px] font-semibold text-[#191C1E]">Open Roles</h1>
+        <p class="mt-4 text-[#464554] text-[18px]">
+          Join our mission to humanize the hiring experience.
+        </p>
+      </div>
+
+      <div class="w-full md:w-85">
+        <div class="relative">
+          <img
+            src="assets/icons/search.svg"
+            alt="Search"
+            class="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400"
+          />
+
+          <input
+            type="text"
+            placeholder="Search by title or keyword..."
+            class="h-11 w-full rounded-lg border border-gray-300 bg-white pl-11 pr-4 text-sm outline-none focus:border-indigo-500"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Departments -->
+    <div class="mt-16">
+      @for (department of departments; track department.name) {
+        <div class="mb-14">
+          <!-- Section Title -->
+          <div class="mb-6 flex items-center gap-3">
+            <span class="text-[30px] text-[#3525CD]">
+              {{ department.icon }}
+            </span>
+
+            <h2 class="text-[24px] font-semibold text-[#191C1E]">
+              {{ department.name }}
+            </h2>
+          </div>
+
+          <div class="border-t border-gray-200 pt-6">
+            <div class="space-y-4">
+              @for (job of department.jobs; track job.title) {
+                <div
+                  class="group flex cursor-pointer items-center justify-between rounded-xl border border-[#f1f1f1] bg-white px-8 py-6 transition-all duration-300 hover:border-gray-200 hover:shadow-md"
+                >
+                  <div>
+                    <h3 class="text-[18px] font-medium text-[#191C1E]">
+                      {{ job.title }}
+                    </h3>
+
+                    <p class="text-[#464554] text-[16px]">
+                      {{ job.location }}
+                      •
+                      {{ job.type }}
+                    </p>
+                  </div>
+
+                  <img src="assets/icons/arrow-right.svg" alt="Arrow" class="h-5 w-5" />
+                </div>
+              }
+            </div>
+          </div>
         </div>
       }
     </div>

@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { Benefit, CareerHero, WorkplaceImage } from '../../../../shared/interfaces/careers.interfaces';
+import {
+  Benefit,
+  CareerHero,
+  WorkplaceImage,
+} from '../../../../shared/interfaces/careers.interfaces';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,30 +17,29 @@ export class Careers {
     badge: "We're Hiring",
 
     title: 'Build the future of',
-
-    highlightedText: 'human-AI collaboration.',
+    highlightedText: 'human-AI',
 
     description:
       'Help us create a world where every candidate finds their perfect role and every company finds their ideal team.',
 
-    image: 'assets/images/career/hero-office.jpg',
+    image: 'assets/careers/pexels-yankrukov-7698712.webp',
   };
 
   workplaceImages: WorkplaceImage[] = [
     {
-      image: 'assets/images/career/workshop.jpg',
+      image: 'assets/careers/pexels-yankrukov-7698712.webp',
       title: 'Collaborative Workspaces',
       subtitle: 'Where ideas become reality.',
     },
     {
-      image: 'assets/images/career/human-first.jpg',
+      image: 'assets/careers/pexels-yankrukov-7698712.webp',
       title: 'Human First',
     },
     {
-      image: 'assets/images/career/event.jpg',
+      image: 'assets/careers/pexels-yankrukov-7698712.webp',
     },
     {
-      image: 'assets/images/career/office.jpg',
+      image: 'assets/careers/pexels-yankrukov-7698712.webp',
     },
   ];
 
@@ -55,6 +58,52 @@ export class Careers {
       icon: '💵',
       title: 'Meaningful Equity',
       description: 'Every full-time employee receives ownership.',
+    },
+  ];
+
+  departments = [
+    {
+      name: 'Engineering',
+      icon: '⌘',
+      jobs: [
+        {
+          title: 'Senior Frontend Engineer',
+          location: 'Remote',
+          type: 'Full-time',
+        },
+        {
+          title: 'Staff Backend Engineer (AI/ML)',
+          location: 'Remote',
+          type: 'Full-time',
+        },
+      ],
+    },
+    {
+      name: 'Product & Design',
+      icon: '◈',
+      jobs: [
+        {
+          title: 'Lead Product Designer',
+          location: 'New York / Remote',
+          type: 'Full-time',
+        },
+      ],
+    },
+    {
+      name: 'Growth',
+      icon: '↗',
+      jobs: [
+        {
+          title: 'Growth Marketing Manager',
+          location: 'London / Remote',
+          type: 'Full-time',
+        },
+        {
+          title: 'Account Executive (Enterprise)',
+          location: 'Remote',
+          type: 'Full-time',
+        },
+      ],
     },
   ];
 }
