@@ -1,10 +1,13 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { } from '@angular/router';
+import { MainLayout } from './layouts/main-layout/main-layout';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  template: '<router-outlet />',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [MainLayout],
+  standalone: true,
+  templateUrl: './app.html',
+  styleUrls: ['./app.css'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class App {}
