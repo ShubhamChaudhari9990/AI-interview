@@ -1,33 +1,70 @@
-<section class="py-20 bg-slate-50">
+<section class="py-10 bg-slate-50/50">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <!-- Left Content -->
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
       <div>
-        <p class="text-xs font-semibold uppercase tracking-widest text-indigo-600">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-indigo-600">
           Our Higher Purpose
         </p>
 
-        <h1 class="mt-3 text-5xl font-bold leading-tight text-slate-900">
+        <h1
+          class="mt-3 text-[48px] font-bold leading-[57.6px] tracking-[-0.03em] text-[#191C1E] md:text-[36px] lg:text-[48px] max-[576px]"
+        >
           Humanizing hiring through intelligent technology.
         </h1>
 
-        <p class="mt-6 text-slate-600 leading-7">
-          At InterviewAI, we believe every candidate deserves a fair chance and every company
-          deserves the perfect fit.
+        <p class="mt-6 mx-auto max-w-100px text-start text-[16px] leading-6 text-[#464554]">
+          At InterviewAI, we believe that every candidate deserves a fair chance and every company
+          deserves the perfect fit. Our mission is to eliminate bias and friction from the
+          recruitment process using state-of-the-art AI.
         </p>
 
-        <div class="grid sm:grid-cols-2 gap-4 mt-10">
+        <div class="grid sm:grid-cols-2 gap-5 mt-10">
           @for (card of heroSection.cards; track card.title) {
-            <div class="bg-white p-6 rounded-xl border border-slate-200">
-              <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center">
-                <span class="text-2xl">{{ card.icon }}</span>
+            <div
+              class="bg-white p-6 rounded-2xl border border-slate-100/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)]"
+            >
+              <div class="w-8 h-8 text-indigo-600 flex items-center justify-start text-xl">
+                @if (card.title.toLowerCase().includes('vision')) {
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    />
+                  </svg>
+                } @else {
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+                    />
+                  </svg>
+                }
               </div>
 
-              <h3 class="mt-4 font-semibold text-lg">
+              <h3 class="mt-3 font-bold text-[#191C1E] text-base">
                 {{ card.title }}
               </h3>
 
-              <p class="mt-2 text-sm text-slate-600">
+              <p class="mt-2 text-xs text-[#464554] leading-relaxed">
                 {{ card.description }}
               </p>
             </div>
@@ -35,31 +72,181 @@
         </div>
       </div>
 
-      <!-- Right Image -->
+      <div class="relative flex justify-center lg:justify-end">
+        <div
+          class="bg-white p-4 rounded-4xl shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-slate-100 max-w-135 w-full"
+        >
+          <img
+            src="assets/blog-listing/blog-head.webp"
+            alt="InterviewAI Enterprise Group Collaboration"
+            class="rounded-3xl w-full h-115 object-cover"
+          />
+        </div>
 
-      <div class="relative">
-        <img
-          src="assets/images/about-team.jpg"
-          alt="team"
-          class="rounded-3xl w-full h-150 object-cover shadow-xl"
-        />
-
-        <div class="absolute bottom-6 left-6 bg-white rounded-xl shadow-lg px-6 py-4">
-          <p class="text-xs text-slate-500">Accuracy Rate</p>
-
-          <h3 class="text-3xl font-bold text-indigo-600">99.8%</h3>
+        <div
+          class="absolute -bottom-6 left-4 lg:-left-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-[0_15px_35px_rgba(99,102,241,0.12)] border border-white/80 p-5 flex items-center gap-3.5 min-w-47.5"
+        >
+          <div
+            class="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              />
+            </svg>
+          </div>
+          <div>
+            <p class="text-[10px] font-bold text-[#464554] tracking-wide">Accuracy Rate</p>
+            <h3 class="text-2xl font-extrabold text-indigo-600 leading-tight">99.8%</h3>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-24">
+<section class="py-12 bg-white select-none">
+  <div class="max-w-300 mx-auto px-12">
+    <div class="text-center max-w-2xl mx-auto mb-24">
+      <h2 class="text-[34px] font-bold text-[#191C1E] tracking-tight leading-tight">
+        The values that drive us
+      </h2>
+      <p class="mt-4 text-[#464554] text-sm font-semibold tracking-wide">
+        Our culture is built on a foundation of excellence, transparency, and relentless progress.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-[50%_20%_20%] gap-x-12 gap-y-12 items-start mb-20 w-full">
+      <div class="flex flex-col justify-between h-57.5 pr-8">
+        <div>
+          <div class="w-8 h-8 text-indigo-600 flex items-center justify-start mb-5">
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#191C1E]tracking-tight">Innovation</h3>
+          <p class="mt-4 text-[#464554] text-[13px] leading-[1.65] max-w-xl">
+            We don't just follow trends; we set them. Our R&D team is constantly pushing the
+            boundaries of what NLP and emotional intelligence AI can achieve.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2 mt-auto">
+          <span
+            class="px-2 py-0.5 text-[10px] font-black tracking-wider text-indigo-600 bg-indigo-50 rounded-md"
+            >AI</span
+          >
+          <span
+            class="px-2 py-0.5 text-[10px] font-black tracking-wider text-cyan-600 bg-cyan-50 rounded-md"
+            >ML</span
+          >
+          <span
+            class="px-2 py-0.5 text-[10px] font-black tracking-wider text-emerald-600 bg-emerald-50 rounded-md"
+            >UX</span
+          >
+        </div>
+      </div>
+
+      <div class="h-57.5">
+        <div class="w-8 h-8 text-indigo-600 flex items-center justify-start mb-5">
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+            />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-[#191C1E]tracking-tight">Accuracy</h3>
+        <p class="mt-4 text-[#464554] text-[13px] leading-[1.65]">
+          Data integrity is our holy grail. We ensure every insight generated is grounded in
+          objective analysis.
+        </p>
+      </div>
+
+      <div class="h-57.5">
+        <div class="w-8 h-8 text-indigo-600 flex items-center justify-start mb-5">
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+            />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-[#191C1E]tracking-tight">Growth</h3>
+        <p class="mt-4 text-[#464554] text-[13px] leading-[1.65]">
+          We believe in the continuous evolution of both our platform and our people.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="relative border-t border-slate-100 pt-12 mt-4 w-full flex justify-between items-start"
+    >
+      <div class="max-w-125">
+        <h3 class="text-xl font-bold text-[#191C1E]tracking-tight">Integrity</h3>
+        <p class="mt-3 text-[#464554] text-[13px] leading-[1.65]">
+          Ethics aren't an afterthought; they are built into our code. We prioritize candidate
+          privacy and algorithmic fairness above all else.
+        </p>
+      </div>
+
+      <div class="absolute right-0 bottom-0 pointer-events-none opacity-20 select-none pb-1 pr-1">
+        <svg
+          class="w-20 h-20 text-indigo-300/70"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7h12m-3 0l-3 9m3-9l3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9H6M12 3v18M12 21h4m-4 0H8"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-12">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center">
       <h2 class="text-4xl font-bold">The values that drive us</h2>
 
-      <p class="text-slate-500 mt-4">
+      <p class="text-[#464554] mt-4">
         Our culture is built on excellence, transparency and relentless progress.
       </p>
     </div>
@@ -75,7 +262,7 @@
             {{ value.title }}
           </h3>
 
-          <p class="mt-3 text-slate-600 leading-7">
+          <p class="mt-3 text-[#464554] leading-7">
             {{ value.description }}
           </p>
         </div>
@@ -87,9 +274,9 @@
 <section class="py-20 bg-gray-50">
   <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Story</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#191C1E]">Our Story</h2>
 
-      <p class="mt-4 text-gray-500">A journey of innovation, growth and impact.</p>
+      <p class="mt-4 text-[#464554]">A journey of innovation, growth and impact.</p>
     </div>
 
     <div class="relative">
@@ -111,7 +298,7 @@
                 {{ item.title }}
               </h4>
 
-              <p class="text-gray-500 mt-2">
+              <p class="text-[#464554] mt-2">
                 {{ item.description }}
               </p>
             </div>
@@ -129,7 +316,7 @@
                 {{ item.title }}
               </h4>
 
-              <p class="text-gray-500 mt-2">
+              <p class="text-[#464554] mt-2">
                 {{ item.description }}
               </p>
             </div>
@@ -145,12 +332,12 @@
   </div>
 </section>
 
-<section class="py-20">
+<section class="py-10">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-14">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Meet the Visionaries</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#191C1E]">Meet the Visionaries</h2>
 
-      <p class="mt-4 text-gray-500">A team of experts dedicated to redefining human resources.</p>
+      <p class="mt-4 text-[#464554]">A team of experts dedicated to redefining human resources.</p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -161,7 +348,7 @@
           <img [src]="member.image" [alt]="member.name" class="w-full h-72 object-cover" />
 
           <div class="p-5">
-            <h3 class="font-semibold text-lg text-gray-900">
+            <h3 class="font-semibold text-lg text-[#191C1E]">
               {{ member.name }}
             </h3>
 
@@ -169,20 +356,20 @@
               {{ member.role }}
             </p>
 
-            <p class="text-gray-500 text-sm mt-3 leading-6">
+            <p class="text-[#464554] text-sm mt-3 leading-6">
               {{ member.description }}
             </p>
 
             <!-- Social Icons -->
             <div class="flex gap-3 mt-4">
               <button
-                class="w-8 h-8 rounded-md border border-gray-200 flex items-center justify-center text-gray-500 hover:text-indigo-600"
+                class="w-8 h-8 rounded-md border border-gray-200 flex items-center justify-center text-[#464554] hover:text-indigo-600"
               >
                 🔗
               </button>
 
               <button
-                class="w-8 h-8 rounded-md border border-gray-200 flex items-center justify-center text-gray-500 hover:text-indigo-600"
+                class="w-8 h-8 rounded-md border border-gray-200 flex items-center justify-center text-[#464554] hover:text-indigo-600"
               >
                 ✉️
               </button>

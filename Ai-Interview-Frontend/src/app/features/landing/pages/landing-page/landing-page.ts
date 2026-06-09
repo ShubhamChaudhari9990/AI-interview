@@ -11,6 +11,7 @@ import { FaqItem, Feature, PricingPlan } from '../../../../shared/interfaces/lan
   styleUrl: './landing-page.css',
 })
 export class LandingPage {
+
   companies = ['CLOUDFLARE', 'STRIPE', 'FIGMA', 'NOTION', 'AIRBNB'];
 
   features: Feature[] = [
@@ -125,11 +126,11 @@ export class LandingPage {
     },
   ];
 
+  selectedFeature: Feature = this.features[0];
+
   toggleFaq(index: number): void {
     this.faqs[index].isOpen = !this.faqs[index].isOpen;
   }
-
-  selectedFeature: Feature = this.features[0];
 
   selectFeature(feature: Feature): void {
     this.selectedFeature = feature;

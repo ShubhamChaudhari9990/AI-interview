@@ -9,6 +9,7 @@ import { BlogArticle } from '../../../../shared/interfaces/blog.interfaces';
   styleUrl: './blog.css',
 })
 export class Blog {
+  
   article: BlogArticle = {
     category: 'ARTIFICIAL INTELLIGENCE',
     title: 'The Future of AI in Recruitment: Balancing Efficiency and Empathy',

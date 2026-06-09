@@ -9,6 +9,7 @@ import { CtaBanner } from '../../../../shared/components/cta-banner/cta-banner';
   styleUrl: './pricing.css',
 })
 export class Pricing {
+  
   faqItems = [
     {
       question: 'Can I change my plan later?',

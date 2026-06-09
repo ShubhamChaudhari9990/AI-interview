@@ -5,7 +5,7 @@ import { CtaBanner } from '../../../../shared/components/cta-banner/cta-banner';
 
 @Component({
   selector: 'app-features',
-  imports: [CommonModule,CtaBanner],
+  imports: [CommonModule, CtaBanner],
   standalone: true,
   templateUrl: './features.html',
   styleUrl: './features.css',
@@ -16,10 +16,8 @@ export class Features {
       tag: 'BEHAVIORAL ANALYSIS',
       title: 'AI-Powered Behavioral Coaching',
       description:
-        'Our advanced neural networks analyze micro-expressions, speech patterns, and sentiment to provide actionable feedback.',
-
-      image: 'assets/images/behavioral-analysis.jpg',
-
+        'Our advanced neural networks analyze micro-expressions, speech patterns, and sentiment to provide actionable feedback for interviewers and candidates alike. Identify soft skills with 98% accuracy.',
+      image: 'assets/careers/pexels-yankrukov-7698712.webp',
       features: [
         {
           title: 'Sentiment Mapping',
@@ -33,15 +31,12 @@ export class Features {
         },
       ],
     },
-
     {
       tag: 'TECHNICAL SCORE',
       title: 'Real-time Coding Evaluation',
       description:
         'Go beyond simple pass/fail tests. Our AI monitors coding sessions and provides detailed insights.',
-
-      image: 'assets/images/coding-evaluation.jpg',
-
+      image: 'assets/careers/pexels-yankrukov-7698712.webp',
       stats: [
         {
           value: 'CI/CD',
@@ -59,10 +54,8 @@ export class Features {
 
   resumeSection: ResumeSection = {
     title: 'Automated Resume Feedback',
-
     subtitle:
       'Screen thousands of applications in minutes with AI that understands context, not just keywords.',
-
     features: [
       {
         title: 'Semantic Parsing',
