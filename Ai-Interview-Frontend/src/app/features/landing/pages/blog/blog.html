@@ -9,12 +9,12 @@
         </span>
 
         <!-- Title -->
-        <h1 class="mt-4 text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+        <h1 class="mt-4 text-4xl md:text-5xl font-bold text-[#191C1E] leading-tight">
           {{ article.title }}
         </h1>
 
         <!-- Description -->
-        <p class="mt-6 text-slate-600 text-lg leading-8">
+        <p class="mt-6 text-[#464554] text-lg leading-8">
           {{ article.description }}
         </p>
 
@@ -28,11 +28,11 @@
             />
 
             <div>
-              <h3 class="font-semibold text-slate-900">
+              <h3 class="font-semibold text-[#191C1E]">
                 {{ article.author.name }}
               </h3>
 
-              <p class="text-sm text-slate-500">
+              <p class="text-sm text-[#464554]">
                 {{ article.author.role }}
               </p>
             </div>
@@ -58,11 +58,11 @@
         <div class="prose prose-slate max-w-none mt-12">
           @for (section of article.sections; track section.heading) {
             <div class="mb-12">
-              <h2 class="text-3xl font-bold text-slate-900">
+              <h2 class="text-3xl font-bold text-[#191C1E]">
                 {{ section.heading }}
               </h2>
 
-              <p class="mt-4 text-slate-600 leading-8">
+              <p class="mt-4 text-[#464554] leading-8">
                 {{ section.content }}
               </p>
             </div>
@@ -72,7 +72,7 @@
         <!-- Quote -->
 
         <div class="border-l-4 border-indigo-600 bg-indigo-50 rounded-r-xl p-6 my-12">
-          <p class="text-lg italic text-slate-700">
+          <p class="text-lg italic text-[#464554]">
             AI should augment human decision-making, not replace it.
           </p>
         </div>
@@ -84,7 +84,7 @@
 
           <div class="flex flex-wrap gap-3">
             @for (tag of article.tags; track tag) {
-              <span class="px-4 py-2 rounded-full bg-slate-100 text-sm text-slate-600">
+              <span class="px-4 py-2 rounded-full bg-slate-100 text-sm text-[#464554]">
                 {{ tag }}
               </span>
             }
@@ -114,7 +114,7 @@
         <div class="bg-white rounded-2xl shadow-sm p-6">
           <h3 class="text-xl font-semibold">Stay ahead in AI</h3>
 
-          <p class="text-slate-500 mt-3 text-sm">
+          <p class="text-[#464554] mt-3 text-sm">
             Weekly insights delivered directly to your inbox.
           </p>
 
@@ -140,7 +140,7 @@
             {{ article.author.role }}
           </p>
 
-          <p class="mt-3 text-slate-500 text-sm">
+          <p class="mt-3 text-[#464554] text-sm">
             AI researcher focused on ethical recruiting and workforce transformation.
           </p>
 
@@ -198,7 +198,7 @@
                 {{ post.title }}
               </h3>
 
-              <p class="mt-2 text-sm text-slate-500">
+              <p class="mt-2 text-sm text-[#464554]">
                 {{ post.publishDate }}
               </p>
             </div>

@@ -10,11 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './faq.css',
 })
 export class Faq {
-  toggleFaq(sectionIndex: number, faqIndex: number): void {
-    this.faqSections[sectionIndex].faqs[faqIndex].isOpen =
-      !this.faqSections[sectionIndex].faqs[faqIndex].isOpen;
-  }
-
+  
   categories: HelpCategory[] = [
     {
       icon: '📘',
@@ -94,4 +90,9 @@ export class Faq {
       ],
     },
   ];
+
+  toggleFaq(sectionIndex: number, faqIndex: number): void {
+    this.faqSections[sectionIndex].faqs[faqIndex].isOpen =
+      !this.faqSections[sectionIndex].faqs[faqIndex].isOpen;
+  }
 }
