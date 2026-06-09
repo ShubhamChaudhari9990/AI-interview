@@ -15,11 +15,11 @@
         <h3 class="font-bold text-slate-900 mb-5">Company</h3>
 
         <ul class="space-y-3">
-          @for (link of companyLinks; track link) {
+          @for (link of companyLinks; track link.route) {
             <li>
-              <a href="#" class="text-slate-500 hover:text-indigo-600 transition">
-                {{ link }}
-              </a>
+              <button (click)="navigateTo(link.route)" class="text-slate-500 hover:text-indigo-600 transition cursor-pointer border-none bg-none text-left">
+                {{ link.label }}
+              </button>
             </li>
           }
         </ul>
@@ -30,11 +30,11 @@
         <h3 class="font-bold text-slate-900 mb-5">Product</h3>
 
         <ul class="space-y-3">
-          @for (link of productLinks; track link) {
+          @for (link of productLinks; track link.route) {
             <li>
-              <a href="#" class="text-slate-500 hover:text-indigo-600 transition">
-                {{ link }}
-              </a>
+              <button (click)="navigateTo(link.route)" class="text-slate-500 hover:text-indigo-600 transition cursor-pointer border-none bg-none text-left">
+                {{ link.label }}
+              </button>
             </li>
           }
         </ul>
@@ -45,11 +45,11 @@
         <h3 class="font-bold text-slate-900 mb-5">Legal</h3>
 
         <ul class="space-y-3">
-          @for (link of legalLinks; track link) {
+          @for (link of legalLinks; track link.route) {
             <li>
-              <a href="#" class="text-slate-500 hover:text-indigo-600 transition">
-                {{ link }}
-              </a>
+              <button (click)="navigateTo(link.route)" class="text-slate-500 hover:text-indigo-600 transition cursor-pointer border-none bg-none text-left">
+                {{ link.label }}
+              </button>
             </li>
           }
         </ul>
@@ -60,11 +60,11 @@
         <h3 class="font-bold text-slate-900 mb-5">Support</h3>
 
         <ul class="space-y-3">
-          @for (link of supportLinks; track link) {
+          @for (link of supportLinks; track link.route) {
             <li>
-              <a href="#" class="text-slate-500 hover:text-indigo-600 transition">
-                {{ link }}
-              </a>
+              <button (click)="navigateTo(link.route)" class="text-slate-500 hover:text-indigo-600 transition cursor-pointer border-none bg-none text-left">
+                {{ link.label }}
+              </button>
             </li>
           }
         </ul>

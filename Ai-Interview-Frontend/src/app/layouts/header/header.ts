@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,15 @@ import { Component } from '@angular/core';
 export class Header {
   isMenuOpen = false;
 
+  router = inject(Router);
+
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  navigateTo(route: string): void {
+    this.router.navigate(['landing/', route]);
+    this.isMenuOpen = false;
+    window.scrollTo(0, 0);
   }
 }

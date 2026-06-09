@@ -3,29 +3,30 @@
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <div class="flex items-center">
-        <h1 class="text-2xl md:text-3xl font-bold text-indigo-600">InterviewAI</h1>
+        <button (click)="navigateTo('home')" class="text-2xl md:text-3xl font-bold text-indigo-600 cursor-pointer border-none bg-none">InterviewAI</button>
       </div>
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-10">
-        <a href="#" class="text-gray-700 font-medium hover:text-indigo-600 transition"> Product </a>
-        <a href="#" class="text-gray-700 font-medium hover:text-indigo-600 transition">
+        <button (click)="navigateTo('features')" class="text-gray-700 font-medium hover:text-indigo-600 transition cursor-pointer border-none bg-none"> Product </button>
+        <button (click)="navigateTo('enterprise')" class="text-gray-700 font-medium hover:text-indigo-600 transition cursor-pointer border-none bg-none">
           Solutions
-        </a>
-        <a href="#" class="text-gray-700 font-medium hover:text-indigo-600 transition"> Pricing </a>
-        <a href="#" class="text-gray-700 font-medium hover:text-indigo-600 transition">
+        </button>
+        <button (click)="navigateTo('pricing')" class="text-gray-700 font-medium hover:text-indigo-600 transition cursor-pointer border-none bg-none"> Pricing </button>
+        <button (click)="navigateTo('blog')" class="text-gray-700 font-medium hover:text-indigo-600 transition cursor-pointer border-none bg-none">
           Resources
-        </a>
+        </button>
       </nav>
 
       <!-- Desktop Actions -->
       <div class="hidden md:flex items-center gap-6">
-        <a href="#" class="text-gray-700 font-semibold hover:text-indigo-600 transition">
+        <button (click)="router.navigate(['auth/login'])" class="text-gray-700 font-semibold hover:text-indigo-600 transition cursor-pointer border-none bg-none">
           Sign In
-        </a>
+        </button>
 
         <button
-          class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2.5 rounded-lg shadow-sm transition-all duration-200"
+          (click)="navigateTo('home')"
+          class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2.5 rounded-lg shadow-sm transition-all duration-200 cursor-pointer"
         >
           Get Started
         </button>
@@ -70,16 +71,16 @@
     <!-- Mobile Menu -->
     <div *ngIf="isMenuOpen" class="md:hidden py-4 border-t border-gray-200">
       <nav class="flex flex-col gap-4">
-        <a href="#" class="text-gray-700 font-medium">Product</a>
-        <a href="#" class="text-gray-700 font-medium">Solutions</a>
-        <a href="#" class="text-gray-700 font-medium">Pricing</a>
-        <a href="#" class="text-gray-700 font-medium">Resources</a>
+        <button (click)="navigateTo('features')" class="text-gray-700 font-medium text-left cursor-pointer border-none bg-none">Product</button>
+        <button (click)="navigateTo('enterprise')" class="text-gray-700 font-medium text-left cursor-pointer border-none bg-none">Solutions</button>
+        <button (click)="navigateTo('pricing')" class="text-gray-700 font-medium text-left cursor-pointer border-none bg-none">Pricing</button>
+        <button (click)="navigateTo('blog')" class="text-gray-700 font-medium text-left cursor-pointer border-none bg-none">Resources</button>
 
         <hr />
 
-        <a href="#" class="text-gray-700 font-semibold"> Sign In </a>
+        <button (click)="navigateTo('home')" class="text-gray-700 font-semibold text-left cursor-pointer border-none bg-none"> Sign In </button>
 
-        <button class="bg-indigo-600 text-white py-3 rounded-lg font-semibold">Get Started</button>
+        <button (click)="navigateTo('home')" class="bg-indigo-600 text-white py-3 rounded-lg font-semibold w-full cursor-pointer">Get Started</button>
       </nav>
     </div>
   </div>
