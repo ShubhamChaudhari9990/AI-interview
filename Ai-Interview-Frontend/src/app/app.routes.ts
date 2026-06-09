@@ -1,23 +1,30 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+  // 1. The Public Homepage (Loaded immediately at http://localhost:4200/)
   {
     path: '',
     loadComponent: () =>
-      import('./features/dashboard/pages/home/home').then((m) => m.HomeComponent),
+      import('./features/dashboard/pages/landing-page/landing-page').then((m) => m.LandingPage),
+    pathMatch: 'full', // Crucial so it doesn't conflict with child routes
   },
-  {
-    path: '',
-    redirectTo: 'auth/login',
-    pathMatch: 'full',
-  },
+
+  // 2. Authentication Features (http://localhost:4200/auth/login)
   {
     path: 'auth',
     loadChildren: () => import('./features/auth/auth.routes').then((m) => m.authRoutes),
   },
+
+  // 3. Main Dashboard Features (Protected/Internal pages like http://localhost:4200/dashboard)
   {
-    path: '',
+    path: 'dashboard',
     loadChildren: () =>
       import('./features/dashboard/dashboard.routes').then((m) => m.dashboardRoutes),
+  },
+
+  // 4. Fallback/Catch-all route
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];

@@ -1,39 +1,16 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { CtaBanner } from '../../../../shared/components/cta-banner/cta-banner';
-
-interface Feature {
-  title: string;
-  description: string;
-  icon: string;
-  color: string;
-  details: string;
-}
-
-interface PricingPlan {
-  name: string;
-  description: string;
-  price: string;
-  duration?: string;
-  features: string[];
-  buttonText: string;
-  popular?: boolean;
-}
-
-interface FaqItem {
-  question: string;
-  answer: string;
-  isOpen: boolean;
-}
+import { FaqItem, Feature, PricingPlan } from '../../../../shared/interfaces/landing.interfaces';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule,CtaBanner],
-  templateUrl: './home.html',
-  styleUrls: ['./home.css'],
+  imports: [CommonModule, CtaBanner],
+  templateUrl: './landing-page.html',
+  styleUrl: './landing-page.css',
 })
-export class HomeComponent {
+export class LandingPage {
   companies = ['CLOUDFLARE', 'STRIPE', 'FIGMA', 'NOTION', 'AIRBNB'];
 
   features: Feature[] = [
