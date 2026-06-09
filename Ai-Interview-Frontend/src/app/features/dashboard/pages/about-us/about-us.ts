@@ -17,21 +17,17 @@ import { CtaBanner } from '../../../../shared/components/cta-banner/cta-banner';
   styleUrl: './about-us.css',
 })
 export class AboutUs {
+  
   heroSection: AboutHero = {
     badge: 'OUR HIGHER PURPOSE',
-
     title: 'Humanizing hiring through intelligent technology.',
-
     description:
       'At InterviewAI, we believe that every candidate deserves a fair chance and every company deserves the perfect fit.',
-
     image: 'assets/images/about/team.jpg',
-
     statistic: {
       label: 'Accuracy Rate',
       value: '99.8%',
     },
-
     cards: [
       {
         title: 'Our Vision',

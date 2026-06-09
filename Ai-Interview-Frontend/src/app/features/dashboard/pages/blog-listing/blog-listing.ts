@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './blog-listing.css',
 })
 export class BlogListing {
+  
   categories: BlogCategory[] = [
     { id: 1, name: 'All Articles', active: true },
     { id: 2, name: 'Interview Tips' },

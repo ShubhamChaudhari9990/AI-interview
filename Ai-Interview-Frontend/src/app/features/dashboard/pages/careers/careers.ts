@@ -13,15 +13,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './careers.css',
 })
 export class Careers {
+
   heroSection: CareerHero = {
     badge: "We're Hiring",
-
     title: 'Build the future of',
     highlightedText: 'human-AI',
-
     description:
       'Help us create a world where every candidate finds their perfect role and every company finds their ideal team.',
-
     image: 'assets/careers/pexels-yankrukov-7698712.webp',
   };
 

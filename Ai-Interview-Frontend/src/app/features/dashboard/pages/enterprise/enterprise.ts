@@ -14,15 +14,12 @@ import { CtaBanner } from '../../../../shared/components/cta-banner/cta-banner';
   styleUrl: './enterprise.css',
 })
 export class Enterprise {
+
   enterpriseSection: EnterpriseSection = {
     badge: 'ENTERPRISE GRADE INTELLIGENCE',
-
     title: 'Scale Your Talent Acquisition with AI Reliability.',
-
-    description: 'Our global recruitment team uses AI infrastructure to streamline hiring.',
-
-    image: 'assets/images/enterprise-dashboard.png',
-
+    description: "Empower your global recruitment team with InterviewAI’s enterprise ecosystem. Secure, compliant, and architected for high-volume technical hiring environments.",
+    image: 'assets/careers/pexels-yankrukov-7698712.webp',
     complianceCards: [
       {
         title: 'Uncompromising Compliance',
@@ -55,9 +52,7 @@ export class Enterprise {
 
   roiSection: RoiSection = {
     title: 'Measure the Business Impact',
-
     description: 'Our enterprise partners see measurable gains.',
-
     metrics: [
       {
         value: '64%',
@@ -70,25 +65,20 @@ export class Enterprise {
         description: 'Average annual savings.',
       },
     ],
-
     estimatedSaving: '$1,250,000',
   };
 
   successStories: CaseStudy[] = [
     {
-      image: 'assets/images/case-study-1.jpg',
+      image: 'assets/careers/pexels-yankrukov-7698712.webp',
       title: 'Standardizing Quality Across 14 Global Regions',
-
       description: 'How a global enterprise improved hiring quality.',
-
       actionText: 'Read Study',
     },
     {
-      image: 'assets/images/case-study-2.jpg',
+      image: 'assets/careers/pexels-yankrukov-7698712.webp',
       title: 'Automating Compliance in High-Risk Markets',
-
       description: 'Reducing operational risk through automation.',
-
       actionText: 'Read Study',
     },
   ];
