@@ -8,7 +8,7 @@ export const dashboardRoutes: Routes = [
     loadComponent: () => import('./pages/landing-page/landing-page').then((m) => m.LandingPage),
   },
   {
-    path: 'about-Us',
+    path: 'about-us',
     canActivate: [AuthGuard],
     loadComponent: () => import('./pages/about-us/about-us').then((m) => m.AboutUs),
   },

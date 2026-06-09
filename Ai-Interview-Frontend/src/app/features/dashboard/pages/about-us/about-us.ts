@@ -1,29 +1,31 @@
 import { Component } from '@angular/core';
-import { AboutHero, VisionMissionCard,
+import {
+  AboutHero,
+  VisionMissionCard,
   Value,
   StoryTimeline,
   TeamMember,
-  Statistic, 
-  ValuesSection} from '../../../../shared/interfaces/about.interfaces';
+  Statistic,
+  ValuesSection,
+} from '../../../../shared/interfaces/about.interfaces';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CtaBanner } from '../../../../shared/components/cta-banner/cta-banner';
 
 @Component({
   selector: 'app-about-us',
-  imports: [CommonModule, RouterModule,CtaBanner],
+  imports: [CommonModule, RouterModule, CtaBanner],
   standalone: true,
   templateUrl: './about-us.html',
   styleUrl: './about-us.css',
 })
 export class AboutUs {
-  
   heroSection: AboutHero = {
     badge: 'OUR HIGHER PURPOSE',
     title: 'Humanizing hiring through intelligent technology.',
     description:
       'At InterviewAI, we believe that every candidate deserves a fair chance and every company deserves the perfect fit.',
-    image: 'assets/images/about/team.jpg',
+    image: 'assets/blog-listing/blog-head.webp',
     statistic: {
       label: 'Accuracy Rate',
       value: '99.8%',
@@ -46,10 +48,8 @@ export class AboutUs {
 
   valuesSection: ValuesSection = {
     title: 'The values that drive us',
-
     subtitle:
       'Our culture is built on a foundation of excellence, transparency, and relentless progress.',
-
     items: [
       {
         title: 'Innovation',
@@ -130,25 +130,25 @@ export class AboutUs {
     {
       name: 'Sarah Chen',
       role: 'Chief Executive Officer',
-      image: 'assets/images/team/sarah.jpg',
+      image: 'assets/blog-listing/blog-head.webp',
       description: 'Passionate about ethical AI and workplace transformation.',
     },
     {
       name: 'Marcus Thorne',
       role: 'Chief Technology Officer',
-      image: 'assets/images/team/marcus.jpg',
+      image: 'assets/blog-listing/blog-head.webp',
       description: 'Architect behind our intelligent hiring platform.',
     },
     {
       name: 'Elena Rodriguez',
       role: 'Head of Artificial Intelligence',
-      image: 'assets/images/team/elena.jpg',
+      image: 'assets/blog-listing/blog-head.webp',
       description: 'Building responsible AI systems for recruitment.',
     },
     {
       name: 'Jameson Lee',
       role: 'VP Product',
-      image: 'assets/images/team/jameson.jpg',
+      image: 'assets/blog-listing/blog-head.webp',
       description: 'Focused on exceptional user experiences.',
     },
   ];
