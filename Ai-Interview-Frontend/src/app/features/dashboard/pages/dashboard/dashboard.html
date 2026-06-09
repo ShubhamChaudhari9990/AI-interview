@@ -1,0 +1,220 @@
+<div class="dashboard-container">
+  <app-sidebar [items]="dashboardItems"></app-sidebar>
+
+  <div class="dashboard-content">
+    <div class="dashboard-hero-card">
+      <div class="hero-copy">
+        <div class="hero-copy-text">
+          <div>
+            
+            <h1>Hello John <span>👋</span></h1>
+          </div>
+          <p class="hero-description">
+            Ready for your next coding challenge? Your performance in Angular is trending 15% higher than last week. Let’s keep the momentum going.
+          </p>
+          <div class="hero-actions">
+            <button class="hero-button primary">Start Interview</button>
+            <button class="hero-button secondary">View Reports</button>
+          </div>
+        </div>
+
+        <!-- <div class="hero-image">
+          <img src="/assets/images/image002.svg" alt="Analytics dashboard illustration" />
+        </div> -->
+      </div>
+    </div>
+
+    <div class="summary-cards">
+      <div class="summary-card">
+        <span class="summary-label">Total Interviews</span>
+        <strong>25</strong>
+        <small>This Month</small>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label">Avg Score</span>
+        <strong>82%</strong>
+        <small>Across assessments</small>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label">Completed</span>
+        <strong>12</strong>
+        <small>This month</small>
+      </div>
+      <div class="summary-card">
+        <span class="summary-label">Practice Time</span>
+        <strong>18h</strong>
+        <small>Active</small>
+      </div>
+    </div>
+
+    <div class="dashboard-panels">
+      <section class="panel panel-chart">
+        <div class="panel-header">
+          <div>
+            <p class="panel-title">Interview Score Progress</p>
+            <small>Historical performance over the last 12 sessions</small>
+          </div>
+          <button class="panel-action">Last 30 Days</button>
+        </div>
+          <div class="chart-area">
+          <div #chartContainer class="score-chart-container"></div>
+        </div>
+        <div class="chart-labels">
+          <span *ngFor="let point of scoreChart">{{ point.label }}</span>
+        </div>
+      </section>
+
+      <section class="panel panel-metrics">
+        <div class="panel-header">
+          <div>
+            <p class="panel-title">Technology Performance</p>
+            <small>Top skills tracked this month</small>
+          </div>
+        </div>
+        <div class="tech-list">
+          <div class="tech-item" *ngFor="let tech of technologyPerformance">
+            <div class="tech-meta">
+              <span>{{ tech.name }}</span>
+              <strong>{{ tech.percent }}%</strong>
+            </div>
+            <div class="tech-bar-bg">
+              <div class="tech-bar-fill" [style.width.%]="tech.percent"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="dashboard-panels dashboard-bottom">
+      <section class="panel panel-table">
+        <div class="panel-header">
+          <div>
+            <p class="panel-title">Recent Interviews</p>
+            <small>Review the latest sessions and outcomes</small>
+          </div>
+          <a class="view-all">View All</a>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>TECH</th>
+              <th>DATE</th>
+              <th>SCORE</th>
+              <th>STATUS</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let interview of recentInterviews">
+              <td>{{ interview.tech }}</td>
+              <td>{{ interview.date }}</td>
+              <td>{{ interview.score }}</td>
+              <td><span class="status {{ interview.statusClass }}">{{ interview.status }}</span></td>
+              <td>•••</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="panel-right-stack">
+        <section class="panel panel-recommend">
+          <div class="panel-header">
+            <div>
+              <p class="panel-title">AI Recommended</p>
+              <small>Suggested topics to strengthen your skills</small>
+            </div>
+          </div>
+          <div class="tag-list">
+            <span class="tag" *ngFor="let tag of recommendedTags">{{ tag }}</span>
+          </div>
+        </section>
+
+        <section class="panel panel-traits">
+          <div class="panel-header">
+            <div>
+              <p class="panel-title">Traits Analysis</p>
+              <small>Key performance and improvement areas from your interviews</small>
+            </div>
+          </div>
+          <div class="traits-list">
+            <div class="trait-card positive">
+              <strong>Strength: Architectural Flow</strong>
+              <p>Great at explaining data binding.</p>
+            </div>
+            <div class="trait-card negative">
+              <strong>Weakness: Memory Leakage</strong>
+              <p>Consider reviewing eRxJS unsubscription.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="dashboard-action-row">
+      <div class="action-card goal-card">
+        <div>
+          <p class="card-title">Monthly Goal</p>
+          <small>Complete 5 Angular Interviews</small>
+        </div>
+        <div class="goal-progress">
+          <span>Progress</span>
+          <strong>60% (3/5)</strong>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 60%"></div>
+        </div>
+      </div>
+
+      <div class="action-card start-interview-card">
+        <div class="start-icon">+</div>
+        <div>
+          <strong>Start Interview</strong>
+        </div>
+      </div>
+
+      <div class="action-card upload-card">
+        <div class="upload-icon">⤴</div>
+        <div>
+          <p class="card-title">Upload Resume</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-resume-section">
+      <section class="panel resume-analysis-card">
+        <div class="resume-card-header">
+          <div>
+            <p class="panel-title">Resume Analysis</p>
+          </div>
+          <span class="resume-badge">Summary</span>
+        </div>
+        <div class="resume-card-content">
+          <p>
+            Our AI analyzed your resume and identified matched skills and gap areas based on your current frontend experience. Focus on improving unit testing coverage to boost your next interview outcome.
+          </p>
+          <div class="resume-stats">
+            <div class="resume-stat">
+              <strong>14</strong>
+              <span>Matched Skills</span>
+            </div>
+            <div class="resume-stat">
+              <strong>3</strong>
+              <span>Gap Areas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel recommended-interviews-card">
+        <div class="recommended-header">
+          <p class="panel-title">Recommended Interviews</p>
+        </div>
+        <div class="recommended-list">
+          <button class="recommended-item">Angular Unit Testing</button>
+          <button class="recommended-item">DevOps for Frontend</button>
+        </div>
+        <button class="update-resume-btn">Update Resume</button>
+      </section>
+    </div>
+  </div>
+</div>

@@ -2,12 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
-import { Footer } from '../footer/footer';
 import { Header } from '../header/header';
 
 @Component({
   selector: 'app-main-layout',
-  imports: [CommonModule, RouterOutlet, Header, Footer],
+  imports: [CommonModule, RouterOutlet, Header],
   standalone: true,
   templateUrl: './main-layout.html',
   styleUrls: ['./main-layout.css'],

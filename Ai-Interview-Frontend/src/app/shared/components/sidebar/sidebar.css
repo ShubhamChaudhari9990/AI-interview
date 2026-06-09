@@ -1,0 +1,163 @@
+.sidebar {
+  width: 280px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  
+}
+
+.sidebar-header {
+  padding: 24px 24px 18px;
+  border-bottom: 1px solid #f0f1f7;
+}
+
+.brand-title h2 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #3525cd;
+}
+
+.brand-title p {
+  margin: 10px 0 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 18px 12px 0;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  color: #334155;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.nav-item:hover {
+  background-color: #eef2ff;
+  color: #1e3a8a;
+}
+
+.nav-item.active {
+  width: 255px;
+  height: 48px;
+  gap: 12px;
+  opacity: 1;
+  padding: 12px 16px;
+  background: #39B8FD1A;
+  border-left-width: 2px;
+  border-left: 2px solid #3525CD;
+  color: #1e3a8a;
+}
+
+.nav-icon {
+  min-width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.nav-icon img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.nav-label {
+  flex: 1;
+}
+
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid #f0f1f7;
+}
+
+.schedule-btn {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: #3525cd;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.schedule-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(53, 37, 205, 0.18);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .sidebar-header {
+    padding: 18px 18px 14px;
+  }
+
+  .brand-title h2 {
+    font-size: 20px;
+  }
+
+  .nav-item {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar-header h2,
+  .brand-title p,
+  .nav-label,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .sidebar-header {
+    padding: 16px 8px;
+  }
+
+  .nav-item {
+    padding: 12px 8px;
+    justify-content: center;
+  }
+
+  .nav-icon {
+    min-width: 32px;
+  }
+}

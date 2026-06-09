@@ -11,6 +11,11 @@ export const routes: Routes = [
 
   // 2. Authentication Features (http://localhost:4200/auth/login)
   {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./features/dashboard/pages/dashboard/dashboard').then((m) => m.DashboardComponent),
+  },
+  {
     path: 'auth',
     loadChildren: () => import('./features/auth/auth.routes').then((m) => m.authRoutes),
   },
