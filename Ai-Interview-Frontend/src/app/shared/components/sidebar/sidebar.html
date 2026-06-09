@@ -1,0 +1,30 @@
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="brand-title">
+      <h2>AI Interview Pro</h2>
+      <p>ENTERPRISE HR</p>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <ul class="nav-list">
+      <li *ngFor="let item of items">
+        <a
+          [routerLink]="item.route"
+          [class.active]="item.active"
+          class="nav-item"
+          (click)="onItemClick(item)"
+        >
+          <span class="nav-icon">
+            <img [src]="item.icon" [alt]="item.label + ' icon'" />
+          </span>
+          <span class="nav-label">{{ item.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="schedule-btn">Schedule Interview</button>
+  </div>
+</aside>
