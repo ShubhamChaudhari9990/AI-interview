@@ -1,86 +1,35 @@
-<header class="bg-[#f3f4f6] border-b border-gray-200 sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <!-- Logo -->
-      <div class="flex items-center">
-        <h1 class="text-2xl md:text-3xl font-bold text-indigo-600">InterviewAI</h1>
-      </div>
-
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-10">
-        <a href="#" class="text-gray-700 font-medium hover:text-indigo-600 transition"> Product </a>
-        <a href="#" class="text-gray-700 font-medium hover:text-indigo-600 transition">
-          Solutions
-        </a>
-        <a href="#" class="text-gray-700 font-medium hover:text-indigo-600 transition"> Pricing </a>
-        <a href="#" class="text-gray-700 font-medium hover:text-indigo-600 transition">
-          Resources
-        </a>
-      </nav>
-
-      <!-- Desktop Actions -->
-      <div class="hidden md:flex items-center gap-6">
-        <a href="#" class="text-gray-700 font-semibold hover:text-indigo-600 transition">
-          Sign In
-        </a>
-
-        <button
-          class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2.5 rounded-lg shadow-sm transition-all duration-200"
-        >
-          Get Started
-        </button>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <button class="md:hidden p-2" (click)="toggleMenu()">
-        <svg
-          *ngIf="!isMenuOpen"
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-7 w-7 text-gray-700"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
+<header class="app-header">
+  <div class="app-header-inner">
+    <div class="header-center">
+      <div class="search-field">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
         </svg>
-
-        <svg
-          *ngIf="isMenuOpen"
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-7 w-7 text-gray-700"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
+        <input type="search" placeholder="Search interviews, candidates, or insights..." />
+      </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div *ngIf="isMenuOpen" class="md:hidden py-4 border-t border-gray-200">
-      <nav class="flex flex-col gap-4">
-        <a href="#" class="text-gray-700 font-medium">Product</a>
-        <a href="#" class="text-gray-700 font-medium">Solutions</a>
-        <a href="#" class="text-gray-700 font-medium">Pricing</a>
-        <a href="#" class="text-gray-700 font-medium">Resources</a>
-
-        <hr />
-
-        <a href="#" class="text-gray-700 font-semibold"> Sign In </a>
-
-        <button class="bg-indigo-600 text-white py-3 rounded-lg font-semibold">Get Started</button>
-      </nav>
+    <div class="header-right">
+      <button class="text-button">Support</button>
+      <button class="icon-button" aria-label="Notifications">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+          <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+        </svg>
+      </button>
+      <button class="icon-button" aria-label="Toggle theme">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </button>
+      <div class="profile-chip">
+        <span class="profile-avatar">J</span>
+        <div class="profile-details">
+          <span class="profile-name">John V.</span>
+          <small>PRO CANDIDATE</small>
+        </div>
+      </div>
     </div>
   </div>
 </header>

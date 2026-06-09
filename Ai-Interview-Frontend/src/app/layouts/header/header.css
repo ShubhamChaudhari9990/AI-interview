@@ -1,4 +1,201 @@
-/* Header-specific small tweaks (kept minimal - Tailwind handles most styles) */
 :host {
   display: block;
+}
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 280px;
+  width: calc(100% - 280px);
+  z-index: 90;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
+}
+
+.app-header-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 72px;
+}
+
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-left {
+  flex: 0 0 auto;
+}
+
+.header-center {
+  flex: 1;
+  justify-content: center;
+}
+
+.header-right {
+  flex: 0 0 auto;
+}
+
+.brand-button {
+  background: transparent;
+  border: none;
+  color: #1f2937;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+}
+
+.search-field {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #E5EEFF;
+  
+}
+
+.search-field svg {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+}
+
+.search-field input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+
+.text-button,
+.icon-button {
+  background: transparent;
+  border: none;
+  color: #111827;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.icon-button:hover {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.icon-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.profile-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: #f8f9ff;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+}
+
+.profile-avatar {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #312e81;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.profile-name {
+  font-weight: 700;
+  color: #111827;
+}
+
+.profile-details small {
+  color: #6b7280;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+  .app-header-inner {
+    padding: 12px 18px;
+  }
+
+  .header-center {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-right {
+    gap: 12px;
+  }
+
+  .search-field {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-header {
+    left: 0;
+    width: 100%;
+  }
+
+  .app-header-inner {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .header-center {
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .header-right {
+    order: 2;
+    width: auto;
+  }
 }
