@@ -1,0 +1,121 @@
+.dashboard-content {
+  min-height: 100vh;
+  padding: 32px;
+  margin-left: 280px;
+  font-family: 'Inter', sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-content {
+    margin-left: 0;
+    padding: 24px;
+  }
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.interview-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  vertical-align: middle;
+  color: #0B1C30;
+  display: inline-block;
+  
+}
+
+.interview-intro {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #0f172a;
+  margin: 0;
+}
+
+.interview-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.interview-action {
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.interview-action--filter {
+  background: #ffffff;
+  border: 1px solid #d6d6d8;
+  color: #0f172a;
+}
+
+.interview-action--quickstart {
+  background: #312e81;
+  color: #ffffff;
+}
+
+.interview-action .button-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Fade in animation for Quick Start section */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 300ms ease-out;
+}
+
+/* Modal entrance animation */
+@keyframes quickModalIn {
+  from { transform: translateY(8px) scale(.98); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+.animate-quickmodal {
+  animation: quickModalIn 260ms cubic-bezier(.22,.9,.36,1) both;
+}
+
+/* Loading bar */
+@keyframes loadingPulse {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-loading {
+  position: relative;
+  overflow: hidden;
+}
+.animate-loading::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 40%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+  animation: loadingPulse 900ms linear infinite;
+}

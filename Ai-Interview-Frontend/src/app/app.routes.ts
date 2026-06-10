@@ -16,6 +16,11 @@ export const routes: Routes = [
       import('./features/dashboard/pages/dashboard/dashboard').then((m) => m.DashboardComponent),
   },
   {
+    path: 'interview',
+    loadComponent: () =>
+      import('./features/dashboard/pages/interview/interview').then((m) => m.InterviewComponent),
+  },
+  {
     path: 'auth',
     loadChildren: () => import('./features/auth/auth.routes').then((m) => m.authRoutes),
   },
