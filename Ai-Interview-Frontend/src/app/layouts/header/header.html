@@ -1,35 +1,45 @@
-<header class="app-header">
-  <div class="app-header-inner">
-    <div class="header-center">
-      <div class="search-field">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="7" />
-          <line x1="21" y1="21" x2="16.65" y2="16.65" />
-        </svg>
-        <input type="search" placeholder="Search interviews, candidates, or insights..." />
-      </div>
-    </div>
-
-    <div class="header-right">
-      <button class="text-button">Support</button>
-      <button class="icon-button" aria-label="Notifications">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
-          <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-        </svg>
-      </button>
-      <button class="icon-button" aria-label="Toggle theme">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
-      </button>
-      <div class="profile-chip">
-        <span class="profile-avatar">J</span>
-        <div class="profile-details">
-          <span class="profile-name">John V.</span>
-          <small>PRO CANDIDATE</small>
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200/50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      
+      <!-- Logo -->
+      <div class="flex items-center gap-2 cursor-pointer" routerLink="/">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary-600 to-purple-600 flex items-center justify-center shadow-lg shadow-primary-500/30">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
         </div>
+        <span class="text-xl font-bold font-display tracking-tight text-slate-900">
+          Interview<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">AI</span>
+        </span>
       </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#features" class="text-sm font-semibold text-slate-600 hover:text-primary-600 transition-colors">Features</a>
+        <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-primary-600 transition-colors">Pricing</a>
+        <a href="#testimonials" class="text-sm font-semibold text-slate-600 hover:text-primary-600 transition-colors">Testimonials</a>
+        <a href="#faq" class="text-sm font-semibold text-slate-600 hover:text-primary-600 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden md:flex items-center gap-4">
+        <a routerLink="/auth/login" class="text-sm font-bold text-slate-700 hover:text-primary-600 transition-colors px-4 py-2">
+          Log in
+        </a>
+        <a routerLink="/auth/register" class="group relative px-5 py-2.5 bg-slate-900 text-white rounded-xl font-bold text-sm overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+          <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-primary-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <span class="relative">Get Started</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden p-2 text-slate-600 hover:text-primary-600 hover:bg-slate-100 rounded-lg transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
   </div>
 </header>

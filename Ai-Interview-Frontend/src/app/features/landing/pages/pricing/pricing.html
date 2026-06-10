@@ -1,207 +1,165 @@
-<div class="bg-gray-50 min-h-screen">
+<div class="bg-slate-50 min-h-screen font-sans">
   <!-- Header -->
-  <section class="text-center py-10 bg-slate-50/50">
-    <div class="max-w-3xl mx-auto px-6">
-      <h1
-        class="mt-3 text-[48px] font-bold leading-[57.6px] tracking-[-0.03em] text-[#191C1E] md:text-[36px] lg:text-[48px] max-[576px]"
-      >
-        Simple, transparent pricing for teams of all sizes.
+  <section class="relative pt-32 pb-20 overflow-hidden flex items-center justify-center min-h-[50vh]">
+    <!-- Dynamic Background Gradients -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary-200 rounded-full mix-blend-multiply filter blur-[120px] opacity-50 animate-blob"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10 animate-fade-in-up">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-slate-900">
+        Simple, transparent pricing for <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">teams of all sizes.</span>
       </h1>
 
-      <p class="mt-6 mx-auto max-w-100px text-center text-[16px] leading-6 text-[#464554]">
-        Choose the plan that fits your current hiring volume. Upgrade or downgrade anytime as your
-        requirements evolve.
+      <p class="mt-8 mx-auto max-w-2xl text-xl leading-relaxed text-slate-600">
+        Choose the plan that fits your current hiring volume. Upgrade or downgrade anytime as your requirements evolve.
       </p>
 
-      <div class="flex justify-center items-center gap-3 mt-10">
-        <span class="text-xs font-semibold tracking-wide text-[#464554]">Monthly</span>
+      <div class="flex justify-center items-center gap-4 mt-12 bg-white/50 backdrop-blur-md p-2 rounded-full border border-slate-200 shadow-sm inline-flex mx-auto">
+        <span class="px-4 py-2 text-sm font-bold tracking-wide text-slate-700 rounded-full cursor-pointer hover:bg-slate-100 transition-colors">Monthly</span>
 
-        <label class="relative inline-flex items-center cursor-pointer select-none">
+        <label class="relative inline-flex items-center cursor-pointer select-none mx-2">
           <input type="checkbox" class="sr-only peer" />
-          <div
-            class="w-11 h-5.5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-0.75 after:inset-s-0.75 after:bg-white after:rounded-full after:h-4 after:w-5 after:transition-all peer-checked:bg-indigo-600"
-          ></div>
+          <div class="w-14 h-7 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-primary-500 peer-checked:to-purple-500"></div>
         </label>
 
-        <div class="flex items-center gap-1.5">
-          <span class="text-xs font-semibold tracking-wide text-[#191C1E]">Yearly</span>
-          <span
-            class="inline-flex px-1.5 py-0.5 text-[10px] font-bold text-emerald-600 bg-emerald-50 rounded border border-emerald-100"
-          >
-            SAVE 20%
+        <div class="flex items-center gap-2 px-4 py-2 text-sm font-bold tracking-wide text-slate-700 rounded-full cursor-pointer hover:bg-slate-100 transition-colors">
+          <span>Yearly</span>
+          <span class="inline-flex px-2 py-0.5 text-[10px] font-black text-emerald-700 bg-emerald-100 rounded-full uppercase tracking-widest shadow-sm">
+            Save 20%
           </span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="max-w-6xl mx-auto px-6 py-12 bg-slate-50/30">
-    <div class="grid md:grid-cols-3 gap-8 items-stretch pt-10">
-      <div
-        class="bg-white rounded-2xl border border-slate-100 p-8 flex flex-col justify-between shadow-sm"
-      >
+  <!-- Pricing Cards -->
+  <section class="max-w-7xl mx-auto px-6 pb-32 relative z-10 -mt-10">
+    <div class="grid lg:grid-cols-3 gap-8 items-stretch animate-fade-in-up" style="animation-delay: 0.2s;">
+      
+      <!-- Free Plan -->
+      <div class="bg-white/80 backdrop-blur-xl rounded-[2.5rem] border border-white p-10 flex flex-col justify-between shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-transform duration-500">
         <div>
-          <h3
-            class="mt-3 text-[24px] font-regular leading-[57.6px] tracking-[-0.03em] text-[#191C1E] md:text-[16px] lg:text-[24px]"
-          >
-            Free
-          </h3>
-          <p class="mt-2 text-[#464554] text-xs leading-relaxed min-h-8">
+          <h3 class="text-2xl font-bold text-slate-900">Starter</h3>
+          <p class="mt-3 text-slate-500 leading-relaxed min-h-[3rem]">
             Perfect for individuals starting their job hunt.
           </p>
-
-          <div class="mt-6 flex items-baseline">
-            <span class="text-[44px] font-extrabold text-[#191C1E] tracking-tight">$0</span>
-            <span class="text-[#464554] text-xs font-semibold ml-1">/mo</span>
+          <div class="mt-8 flex items-baseline">
+            <span class="text-6xl font-black text-slate-900 tracking-tight">$0</span>
+            <span class="text-slate-500 font-bold ml-2">/mo</span>
           </div>
-
-          <ul class="mt-8 space-y-3.5 text-xs font-medium text-[#464554]">
-            <li class="flex items-center gap-2.5">
-              <span
-                class="w-4 h-4 rounded-full bg-indigo-600 text-white flex items-center justify-center text-[9px] font-bold"
-                >&checkmark;</span
-              >
+          <ul class="mt-10 space-y-5 text-slate-600 font-medium">
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
               5 AI Mock Interviews / mo
             </li>
-            <li class="flex items-center gap-2.5">
-              <span
-                class="w-4 h-4 rounded-full bg-indigo-600 text-white flex items-center justify-center text-[9px] font-bold"
-                >&checkmark;</span
-              >
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
               Basic Feedback Reports
             </li>
-            <li class="flex items-center gap-2.5">
-              <span
-                class="w-4 h-4 rounded-full bg-indigo-600 text-white flex items-center justify-center text-[9px] font-bold"
-                >&checkmark;</span
-              >
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
               Community Support
             </li>
           </ul>
         </div>
-
-        <button
-          class="mt-8 w-full border border-indigo-600 hover:bg-indigo-50 text-indigo-600 py-3 rounded-xl font-bold text-xs transition-colors"
-        >
+        <button class="mt-12 w-full bg-slate-100 hover:bg-slate-200 text-slate-900 py-4 rounded-2xl font-bold text-lg transition-colors border border-slate-200">
           Start for Free
         </button>
       </div>
 
-      <div
-        class="bg-indigo-600 text-white rounded-2xl p-8 flex flex-col justify-between shadow-xl shadow-indigo-100 relative transform lg:scale-105"
-      >
-        <span
-          class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-400 text-slate-900 text-[9px] tracking-wider font-extrabold px-3 py-1 rounded-full uppercase"
-        >
-          Most Popular
-        </span>
-
+      <!-- Pro Plan -->
+      <div class="bg-gradient-to-b from-primary-600 to-purple-800 text-white rounded-[2.5rem] p-10 flex flex-col justify-between shadow-2xl shadow-primary-500/30 relative transform lg:-translate-y-8 z-10 border border-white/20">
+        <div class="absolute -top-4 inset-x-0 flex justify-center">
+          <span class="bg-gradient-to-r from-emerald-400 to-emerald-500 text-slate-900 text-xs font-black px-6 py-2 rounded-full uppercase tracking-widest shadow-lg">
+            Most Popular
+          </span>
+        </div>
         <div>
-          <h3
-            class="mt-3 text-[24px] font-regular leading-[57.6px] tracking-[-0.03em] text-indigo-100 md:text-[16px] lg:text-[24px]"
-          >
-            Pro
-          </h3>
-          <p class="mt-2 text-indigo-100 text-xs leading-relaxed min-h-8">
+          <h3 class="text-2xl font-bold text-white">Pro</h3>
+          <p class="mt-3 text-primary-100 leading-relaxed min-h-[3rem]">
             Everything you need for serious career growth.
           </p>
-
-          <div class="mt-6 flex items-baseline">
-            <span class="text-[44px] font-extrabold tracking-tight">$29</span>
-            <span class="text-indigo-200 text-xs font-semibold ml-1">/mo</span>
+          <div class="mt-8 flex items-baseline">
+            <span class="text-6xl font-black tracking-tight">$29</span>
+            <span class="text-primary-200 font-bold ml-2">/mo</span>
           </div>
-
-          <ul class="mt-8 space-y-3.5 text-xs font-medium text-white">
-            <li class="flex items-center gap-2.5">
-              <span
-                class="w-4 h-4 rounded-full bg-emerald-400 text-slate-900 flex items-center justify-center text-[9px] font-bold"
-                >&checkmark;</span
-              >
+          <ul class="mt-10 space-y-5 text-white font-medium">
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-400/30">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
               Unlimited Mock Interviews
             </li>
-            <li class="flex items-center gap-2.5">
-              <span
-                class="w-4 h-4 rounded-full bg-emerald-400 text-slate-900 flex items-center justify-center text-[9px] font-bold"
-                >&checkmark;</span
-              >
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-400/30">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
               Advanced Behavioral Analysis
             </li>
-            <li class="flex items-center gap-2.5">
-              <span
-                class="w-4 h-4 rounded-full bg-emerald-400 text-slate-900 flex items-center justify-center text-[9px] font-bold"
-                >&checkmark;</span
-              >
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-400/30">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
               Custom Question Banks
             </li>
-            <li class="flex items-center gap-2.5">
-              <span
-                class="w-4 h-4 rounded-full bg-emerald-400 text-slate-900 flex items-center justify-center text-[9px] font-bold"
-                >&checkmark;</span
-              >
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-400/30">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
               Priority Email Support
             </li>
           </ul>
         </div>
-
-        <button
-          class="mt-8 w-full bg-white hover:bg-slate-50 text-indigo-600 py-3.5 rounded-xl font-bold text-xs transition-colors shadow-md"
-        >
+        <button class="mt-12 w-full bg-white hover:bg-slate-50 text-primary-600 py-4 rounded-2xl font-black text-lg transition-colors shadow-xl">
           Go Pro Now
         </button>
       </div>
 
-      <div
-        class="bg-white rounded-2xl border border-slate-100 p-8 flex flex-col justify-between shadow-sm"
-      >
+      <!-- Enterprise Plan -->
+      <div class="bg-white/80 backdrop-blur-xl rounded-[2.5rem] border border-white p-10 flex flex-col justify-between shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-transform duration-500">
         <div>
-          <h3
-            class="mt-3 text-[24px] font-regular leading-[57.6px] tracking-[-0.03em] text-[#191C1E] md:text-[16px] lg:text-[24px]"
-          >
-            Enterprise
-          </h3>
-          <p class="mt-2 text-[#464554] text-xs leading-relaxed min-h-8">
+          <h3 class="text-2xl font-bold text-slate-900">Enterprise</h3>
+          <p class="mt-3 text-slate-500 leading-relaxed min-h-[3rem]">
             Scale your hiring with tailored solutions.
           </p>
-
-          <div class="mt-6 flex items-baseline">
-            <span class="text-[40px] font-extrabold text-[#191C1E] tracking-tight">Custom</span>
+          <div class="mt-8 flex items-baseline">
+            <span class="text-5xl font-black text-slate-900 tracking-tight">Custom</span>
           </div>
-
-          <ul class="mt-8 space-y-3.5 text-xs font-medium text-[#464554]">
-            <li class="flex items-center gap-2.5">
-              <span
-                class="w-4 h-4 rounded-full bg-indigo-600 text-white flex items-center justify-center text-[9px] font-bold"
-                >&checkmark;</span
-              >
+          <ul class="mt-12 space-y-5 text-slate-600 font-medium">
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
               SSO & Advanced Security
             </li>
-            <li class="flex items-center gap-2.5">
-              <span
-                class="w-4 h-4 rounded-full bg-indigo-600 text-white flex items-center justify-center text-[9px] font-bold"
-                >&checkmark;</span
-              >
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
               API Access for ATS
             </li>
-            <li class="flex items-center gap-2.5">
-              <span
-                class="w-4 h-4 rounded-full bg-indigo-600 text-white flex items-center justify-center text-[9px] font-bold"
-                >&checkmark;</span
-              >
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
               Dedicated Success Manager
             </li>
-            <li class="flex items-center gap-2.5">
-              <span
-                class="w-4 h-4 rounded-full bg-indigo-600 text-white flex items-center justify-center text-[9px] font-bold"
-                >&checkmark;</span
-              >
+            <li class="flex items-start gap-4">
+              <div class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
               White-label Interviews
             </li>
           </ul>
         </div>
-
-        <button
-          class="mt-8 w-full border border-slate-300 hover:bg-slate-50 text-slate-800 py-3 rounded-xl font-bold text-xs transition-colors"
-        >
+        <button class="mt-12 w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-2xl font-bold text-lg transition-colors shadow-lg">
           Contact Sales
         </button>
       </div>
@@ -209,111 +167,102 @@
   </section>
 </div>
 
-<section class="text-center py-16 bg-slate-50/40 border-b border-slate-100">
-  <p class="uppercase text-[10px] font-bold tracking-widest text-[#464554]">
-    Trusted by teams at the world's leading companies
-  </p>
-
-  <div class="flex justify-center items-center gap-12 mt-8 opacity-40 grayscale">
-    <img src="assets/enterprise/icon1.svg" alt="Google" class="h-5 w-auto" />
-    <img src="assets/enterprise/icon1.svg" alt="Slack" class="h-5 w-auto" />
-    <img src="assets/enterprise/icon1.svg" alt="Spotify" class="h-5 w-auto" />
-    <img src="assets/enterprise/icon1.svg" alt="Dropbox" class="h-5 w-auto" />
-  </div>
-</section>
-
-<section class="bg-white py-12">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2
-      class="mb-16 text-[36px] font-semibold leading-[57.6px] tracking-[-0.03em] text-[#191C1E] md:text-[32px] lg:text-[36px] text-3xl text-center"
-    >
-      Compare Features
-    </h2>
-
-    <div class="overflow-x-auto">
-      <table class="w-full border-collapse">
-        <thead>
-          <tr
-            class="text-[10px] uppercase font-bold tracking-wider text-[#464554] border-b border-slate-100"
-          >
-            <th class="text-left pb-6 w-1/4 font-semibold">Feature</th>
-            <th class="pb-6 w-1/4 font-semibold text-center">Free</th>
-            <th class="pb-6 w-1/4 font-semibold text-center">Pro</th>
-            <th class="pb-6 w-1/4 font-semibold text-center">Enterprise</th>
-          </tr>
-        </thead>
-
-        <tbody class="text-xs text-slate-700">
-          <tr class="border-b border-slate-50">
-            <td class="py-6 font-semibold text-[#191C1E] text-left">Monthly Interviews</td>
-            <td class="py-6 text-center text-[#464554]">5</td>
-            <td class="py-6 text-center text-indigo-600 font-bold">Unlimited</td>
-            <td class="py-6 text-center text-indigo-600 font-bold">Unlimited</td>
-          </tr>
-
-          <tr class="border-b border-slate-50">
-            <td class="py-6 font-semibold text-[#191C1E] text-left">AI Sentiment Analysis</td>
-            <td class="py-6 text-center text-[#464554] text-base font-medium">&times;</td>
-            <td class="py-6 text-center text-indigo-600 text-base font-bold">&checkmark;</td>
-            <td class="py-6 text-center text-indigo-600 text-base font-bold">&checkmark;</td>
-          </tr>
-
-          <tr class="border-b border-slate-50">
-            <td class="py-6 font-semibold text-[#191C1E] text-left">Mock Video Interviews</td>
-            <td class="py-6 text-center text-[#464554]">Audio Only</td>
-            <td class="py-6 text-center text-slate-600 font-medium">Full HD Video</td>
-            <td class="py-6 text-center text-slate-600 font-medium">4K Video Recording</td>
-          </tr>
-
-          <tr class="border-b border-slate-50">
-            <td class="py-6 font-semibold text-[#191C1E] text-left">Team Collaboration</td>
-            <td class="py-6 text-center text-[#464554] text-base font-medium">&times;</td>
-            <td class="py-6 text-center text-[#464554] font-medium">Up to 3 users</td>
-            <td class="py-6 text-center text-slate-600 font-medium">Unlimited</td>
-          </tr>
-
-          <tr>
-            <td class="py-6 font-semibold text-[#191C1E] text-left">SLA Support</td>
-            <td class="py-6 text-center text-[#464554] text-base font-medium">&times;</td>
-            <td class="py-6 text-center text-[#464554] text-base font-medium">&times;</td>
-            <td class="py-6 text-center text-indigo-600 text-base font-bold">&checkmark;</td>
-          </tr>
-        </tbody>
-      </table>
+<!-- Trusted By -->
+<section class="text-center py-24 bg-white border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-6 animate-fade-in-up">
+    <p class="uppercase text-sm font-black tracking-widest text-slate-400">
+      Trusted by teams at the world's leading companies
+    </p>
+    <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 mt-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+      <img src="assets/enterprise/icon1.svg" alt="Google" class="h-8 w-auto hover:scale-110 transition-transform" />
+      <img src="assets/enterprise/icon1.svg" alt="Slack" class="h-8 w-auto hover:scale-110 transition-transform" />
+      <img src="assets/enterprise/icon1.svg" alt="Spotify" class="h-8 w-auto hover:scale-110 transition-transform" />
+      <img src="assets/enterprise/icon1.svg" alt="Dropbox" class="h-8 w-auto hover:scale-110 transition-transform" />
     </div>
   </div>
 </section>
 
-<!-- faq -->
+<!-- Compare Features -->
+<section class="bg-slate-50 py-32 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-20 animate-fade-in-up">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+        Compare Features
+      </h2>
+      <p class="mt-6 text-xl text-slate-600">See exactly what you get with each plan.</p>
+    </div>
 
-<section class="max-w-4xl mx-auto py-10 px-6">
-  <h2
-    class="my-5 text-[32px] font-bold leading-[57.6px] tracking-[-0.03em] text-[#191C1E] md:text-[32px] lg:text-[36px] text-center"
-  >
-    Frequently Asked Questions
-  </h2>
+    <div class="bg-white rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden animate-fade-in-up" style="animation-delay: 0.2s;">
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-slate-50/80 backdrop-blur-sm border-b border-slate-200 text-sm uppercase font-black tracking-widest text-slate-500">
+              <th class="text-left p-8 w-1/4">Feature</th>
+              <th class="p-8 w-1/4 text-center">Starter</th>
+              <th class="p-8 w-1/4 text-center bg-primary-50/50 text-primary-700">Pro</th>
+              <th class="p-8 w-1/4 text-center">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody class="text-base text-slate-700 divide-y divide-slate-100">
+            <tr class="hover:bg-slate-50/50 transition-colors">
+              <td class="p-8 font-bold text-slate-900">Monthly Interviews</td>
+              <td class="p-8 text-center text-slate-600">5</td>
+              <td class="p-8 text-center text-primary-600 font-bold bg-primary-50/20">Unlimited</td>
+              <td class="p-8 text-center text-slate-900 font-bold">Unlimited</td>
+            </tr>
+            <tr class="hover:bg-slate-50/50 transition-colors">
+              <td class="p-8 font-bold text-slate-900">AI Sentiment Analysis</td>
+              <td class="p-8 text-center text-slate-400 font-medium text-2xl">&minus;</td>
+              <td class="p-8 text-center text-primary-600 font-bold text-xl bg-primary-50/20">&checkmark;</td>
+              <td class="p-8 text-center text-slate-900 font-bold text-xl">&checkmark;</td>
+            </tr>
+            <tr class="hover:bg-slate-50/50 transition-colors">
+              <td class="p-8 font-bold text-slate-900">Mock Video Interviews</td>
+              <td class="p-8 text-center text-slate-600">Audio Only</td>
+              <td class="p-8 text-center text-primary-600 font-bold bg-primary-50/20">Full HD Video</td>
+              <td class="p-8 text-center text-slate-900 font-bold">4K Recording</td>
+            </tr>
+            <tr class="hover:bg-slate-50/50 transition-colors">
+              <td class="p-8 font-bold text-slate-900">Team Collaboration</td>
+              <td class="p-8 text-center text-slate-400 font-medium text-2xl">&minus;</td>
+              <td class="p-8 text-center text-primary-600 font-bold bg-primary-50/20">Up to 3 users</td>
+              <td class="p-8 text-center text-slate-900 font-bold">Unlimited</td>
+            </tr>
+            <tr class="hover:bg-slate-50/50 transition-colors">
+              <td class="p-8 font-bold text-slate-900">SLA Support</td>
+              <td class="p-8 text-center text-slate-400 font-medium text-2xl">&minus;</td>
+              <td class="p-8 text-center text-slate-400 font-medium text-2xl bg-primary-50/20">&minus;</td>
+              <td class="p-8 text-center text-slate-900 font-bold text-xl">&checkmark;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+<!-- FAQ -->
+<section class="max-w-4xl mx-auto py-32 px-6">
+  <div class="text-center mb-16 animate-fade-in-up">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+      Frequently Asked Questions
+    </h2>
+    <p class="mt-6 text-xl text-slate-600">Got questions? We've got answers.</p>
+  </div>
+
+  <div class="space-y-4 animate-fade-in-up" style="animation-delay: 0.2s;">
     @for (item of faqItems; track item.question; let i = $index) {
-      <div class="border-b border-gray-100 last:border-b-0">
-        <button
-          class="w-full flex items-center justify-between px-6 py-5 text-left"
-          (click)="toggleFaq(i)"
-        >
-          <span class="text-[18px] font-semibold text-[#191C1E] md:text-[14px] lg:text-[18px]">
+      <div class="bg-white rounded-[1.5rem] shadow-sm border border-slate-100 overflow-hidden transition-all duration-300" [class.shadow-md]="item.isOpen" [class.border-primary-200]="item.isOpen">
+        <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" (click)="toggleFaq(i)">
+          <span class="text-lg font-bold text-slate-900 pr-8">
             {{ item.question }}
           </span>
-
-          <span
-            class="text-indigo-600 text-xl transition-transform duration-300"
-            [class.rotate-45]="item.isOpen"
-          >
-            +
+          <span class="text-primary-600 flex-shrink-0 w-8 h-8 rounded-full bg-primary-50 flex items-center justify-center transition-transform duration-300" [class.rotate-180]="item.isOpen" [class.bg-primary-600]="item.isOpen" [class.text-white]="item.isOpen">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </span>
         </button>
-
         @if (item.isOpen) {
-          <div class="px-6 pb-5 text-sm mt-4 text-[18px] leading-7.5 text-[#464554]">
+          <div class="px-6 pb-6 text-slate-600 leading-relaxed animate-fade-in-up text-lg">
             {{ item.answer }}
           </div>
         }
@@ -323,7 +272,6 @@
 </section>
 
 <!-- banner -->
-
 <app-cta-banner
   title="Ready to master your next interview?"
   description="Join over 50,000 candidates who have landed their dream jobs using InterviewAI's intelligent coaching platform."
