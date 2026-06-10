@@ -13,7 +13,6 @@
 }
 
 .dashboard-container {
-  display: flex;
   min-height: 100vh;
 }
 
@@ -27,7 +26,7 @@
   vertical-align: middle;
   color: #0B1C30;
   display: inline-block;
-  
+
 }
 
 .interview-intro {
@@ -83,6 +82,7 @@ button {
     opacity: 0;
     transform: translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -95,27 +95,44 @@ button {
 
 /* Modal entrance animation */
 @keyframes quickModalIn {
-  from { transform: translateY(8px) scale(.98); opacity: 0; }
-  to { transform: translateY(0) scale(1); opacity: 1; }
+  from {
+    transform: translateY(8px) scale(.98);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }
+
 .animate-quickmodal {
-  animation: quickModalIn 260ms cubic-bezier(.22,.9,.36,1) both;
+  animation: quickModalIn 260ms cubic-bezier(.22, .9, .36, 1) both;
 }
 
 /* Loading bar */
 @keyframes loadingPulse {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
+
 .animate-loading {
   position: relative;
   overflow: hidden;
 }
+
 .animate-loading::after {
   content: '';
   position: absolute;
-  left: 0; top: 0; bottom: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
   width: 40%;
-  background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02));
   animation: loadingPulse 900ms linear infinite;
 }
