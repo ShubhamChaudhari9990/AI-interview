@@ -1,105 +1,109 @@
 <!-- HERO SECTION -->
-<section class="bg-[#F5F5FA] min-h-screen flex items-center">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+<section class="relative min-h-[90vh] flex items-center overflow-hidden bg-slate-50">
+  <!-- Dynamic Background Gradients -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-0 -left-4 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+    <div class="absolute top-0 -right-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+    <!-- Subtle Grid Pattern -->
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNFMkU4RjAiLz48L3N2Zz4=')] opacity-50"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20 relative z-10">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       <!-- Left Content -->
-      <div>
+      <div class="animate-fade-in-up">
         <!-- Badge -->
-        <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium border border-indigo-200"
-        >
-          <span class="w-2 h-2 bg-indigo-600 rounded-full"></span>
-          New: Coding Challenges 2.0
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-white/40 text-primary-700 text-sm font-semibold shadow-sm mb-8 hover:shadow-md transition-shadow cursor-default">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-primary-500"></span>
+          </span>
+          Next-Gen AI Coach 2.0 Live
         </div>
 
         <!-- Heading -->
-        <h1 class="mt-8 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#191C1E]">
-          Master Your Interviews
-          <br />
-          with
-          <span class="text-indigo-600"> Generative AI </span>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] text-slate-900 tracking-tight">
+          Master Your Interviews <br />
+          with <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">Generative AI</span>
         </h1>
 
         <!-- Description -->
-        <p class="mt-6 text-lg text-[#464554] leading-relaxed max-w-xl">
-          Practice with industry-specific mock interviews, receive real-time behavioral feedback,
-          and optimize your coding performance using our state-of-the-art AI coach.
+        <p class="mt-6 text-xl text-slate-600 leading-relaxed max-w-xl font-medium">
+          Practice with industry-specific mock interviews, receive real-time behavioral feedback, and land your dream job with our state-of-the-art AI coach.
         </p>
 
         <!-- CTA Buttons -->
-        <div class="mt-10 flex flex-wrap gap-4">
-          <button
-            (click)="startPractice()"
-            class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg shadow-indigo-300/50 transition"
-          >
-            Start Practicing Free
+        <div class="mt-10 flex flex-wrap gap-5">
+          <button (click)="startPractice()" class="group relative px-8 py-4 bg-primary-600 text-white rounded-2xl font-bold text-lg overflow-hidden shadow-[0_8px_30px_rgb(79,70,229,0.3)] hover:shadow-[0_8px_30px_rgb(79,70,229,0.5)] hover:-translate-y-1 transition-all duration-300">
+            <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-primary-500 to-primary-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <span class="relative flex items-center gap-2">
+              Start Practicing Free
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </span>
           </button>
 
-          <button
-            (click)="watchDemo()"
-            class="bg-white border border-gray-300 hover:border-indigo-300 px-8 py-4 rounded-xl font-semibold text-indigo-600 flex items-center gap-2 transition"
-          >
+          <button (click)="watchDemo()" class="group px-8 py-4 bg-white/70 backdrop-blur-md border border-slate-200 text-slate-700 rounded-2xl font-bold text-lg hover:bg-white hover:border-primary-200 hover:text-primary-600 shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center group-hover:bg-primary-600 group-hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-0.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+              </svg>
+            </div>
             Watch Demo
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <circle cx="12" cy="12" r="10" stroke-width="2" />
-              <path d="M10 8L16 12L10 16V8Z" fill="currentColor" />
-            </svg>
           </button>
         </div>
 
         <!-- Social Proof -->
-        <div class="mt-12 flex items-center gap-4">
-          <div class="flex -space-x-3">
-            <img
-              src="https://i.pravatar.cc/40?img=1"
-              class="w-10 h-10 rounded-full border-2 border-white"
-            />
-
-            <img
-              src="https://i.pravatar.cc/40?img=2"
-              class="w-10 h-10 rounded-full border-2 border-white"
-            />
-
-            <img
-              src="https://i.pravatar.cc/40?img=3"
-              class="w-10 h-10 rounded-full border-2 border-white"
-            />
+        <div class="mt-12 pt-8 border-t border-slate-200/60 flex items-center gap-6">
+          <div class="flex -space-x-4">
+            <img src="https://i.pravatar.cc/100?img=1" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="User 1"/>
+            <img src="https://i.pravatar.cc/100?img=2" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="User 2"/>
+            <img src="https://i.pravatar.cc/100?img=3" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="User 3"/>
+            <div class="w-12 h-12 rounded-full border-2 border-white shadow-sm bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-600">+2k</div>
           </div>
-
-          <p class="text-sm text-[#464554] font-medium">
-            <span class="font-bold">12,000+</span>
-            candidates placed this month
-          </p>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-1 text-amber-400">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" /></svg>
+            </div>
+            <p class="text-sm text-slate-600 font-medium mt-1">
+              <span class="font-bold text-slate-900">12,000+</span> candidates hired
+            </p>
+          </div>
         </div>
       </div>
 
       <!-- Right Image -->
-      <div class="relative">
-        <div class="bg-white p-5 rounded-[30px] shadow-2xl rotate-2">
-          <img
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900"
-            alt="AI Dashboard"
-            class="rounded-2xl w-full h-auto object-cover"
-          />
-        </div>
-
-        <div
-          class="absolute bottom-4 left-0 bg-white rounded-2xl px-5 py-3 shadow-xl flex items-center gap-3"
-        >
-          <div
-            class="w-7 h-7 rounded-full bg-green-600 text-white flex items-center justify-center"
-          >
-            ✓
+      <div class="relative lg:h-[600px] flex items-center justify-center animate-fade-in-up" style="animation-delay: 0.2s;">
+        <!-- Decorative Elements -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-primary-100 to-purple-50 rounded-[40px] transform rotate-3 scale-105 opacity-50 z-0"></div>
+        
+        <div class="relative z-10 bg-white/80 backdrop-blur-xl p-4 rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white transition-transform hover:-translate-y-2 duration-500">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900" alt="AI Dashboard" class="rounded-[20px] w-full h-auto object-cover shadow-inner" />
+          
+          <!-- Floating UI Elements -->
+          <div class="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-white flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+            <div class="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Evaluation</p>
+              <p class="text-lg font-bold text-slate-900">Score: 94/100</p>
+            </div>
           </div>
-
-          <span class="font-semibold text-gray-800"> Confidence Score: 94% </span>
+          
+          <div class="absolute -top-6 -right-6 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white flex items-center gap-3 animate-bounce" style="animation-duration: 4s; animation-delay: 1s;">
+            <div class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-primary-500"></span>
+            </div>
+            <span class="font-bold text-sm text-slate-800">AI Analyzing...</span>
+          </div>
         </div>
       </div>
     </div>
@@ -107,54 +111,42 @@
 </section>
 
 <!-- FEATURES SECTION -->
-
-<section class="bg-[#F8F9FC] py-20">
+<section class="bg-white py-24 relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-6">
     <!-- Companies -->
-    <div class="text-center mb-20">
-      <p class="uppercase tracking-[4px] text-xs font-semibold text-[#464554] mb-8">
-        Empowering teams at world-class companies
-      </p>
-
-      <div class="flex flex-wrap justify-center gap-10 md:gap-16 text-gray-400 font-bold">
+    <div class="text-center mb-24">
+      <p class="uppercase tracking-[0.2em] text-sm font-bold text-slate-400 mb-8">Trusted by engineers at top companies</p>
+      <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
         @for (company of companies; track company) {
-          <span>{{ company }}</span>
+          <span class="text-xl md:text-2xl font-display font-bold text-slate-800">{{ company }}</span>
         }
       </div>
     </div>
 
     <!-- Heading -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-[#191C1E]">
-        Everything you need to
-        <span class="text-indigo-600">excel</span>
+    <div class="text-center max-w-3xl mx-auto mb-20 animate-fade-in-up">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900">
+        Everything you need to <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">excel</span>
       </h2>
-
-      <p class="mt-5 text-lg text-[#464554]">
-        Our AI-driven toolkit simulates real-world interview scenarios to build your confidence and
-        skills.
+      <p class="mt-6 text-xl text-slate-600 leading-relaxed">
+        Our AI-driven toolkit simulates real-world interview scenarios to build your confidence and skills.
       </p>
     </div>
 
     <!-- Feature Cards -->
-    <div class="grid lg:grid-cols-3 gap-6">
+    <div class="grid lg:grid-cols-3 gap-8">
       @for (feature of features; track feature.title) {
-        <div
-          (click)="selectFeature(feature)"
-          class="bg-white rounded-3xl p-8 cursor-pointer border border-gray-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
-        >
-          <div
-            class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-6"
-            [ngClass]="feature.color"
-          >
+        <div (click)="selectFeature(feature)" class="group relative bg-slate-50 rounded-3xl p-8 cursor-pointer border border-slate-100 hover:border-primary-200 hover:bg-white hover:shadow-2xl hover:shadow-primary-500/10 transition-all duration-300">
+          <div class="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+          </div>
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-sm transition-transform group-hover:scale-110 group-hover:-rotate-3" [ngClass]="feature.color">
             {{ feature.icon }}
           </div>
-
-          <h3 class="text-2xl font-bold text-[#191C1E] mb-4">
+          <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-primary-600 transition-colors">
             {{ feature.title }}
           </h3>
-
-          <p class="text-[#464554]">
+          <p class="text-slate-600 leading-relaxed">
             {{ feature.description }}
           </p>
         </div>
@@ -163,21 +155,16 @@
 
     <!-- Selected Feature Details -->
     @if (selectedFeature) {
-      <div class="mt-12 bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-        <div class="flex items-center gap-4 mb-4">
-          <div
-            class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl"
-            [ngClass]="selectedFeature.color"
-          >
+      <div class="mt-12 bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-10 shadow-2xl border border-slate-700 text-white animate-fade-in-up">
+        <div class="flex items-center gap-5 mb-6">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl bg-white/10 backdrop-blur-sm border border-white/20">
             {{ selectedFeature.icon }}
           </div>
-
-          <h3 class="text-3xl font-bold">
+          <h3 class="text-3xl font-bold text-white">
             {{ selectedFeature.title }}
           </h3>
         </div>
-
-        <p class="text-[#464554] text-lg leading-relaxed">
+        <p class="text-slate-300 text-xl leading-relaxed">
           {{ selectedFeature.details }}
         </p>
       </div>
@@ -185,193 +172,123 @@
   </div>
 </section>
 
-<!-- new -->
-
-<section class="bg-[#F5F5FA] py-24">
+<!-- HOW IT WORKS SECTION -->
+<section class="bg-slate-50 py-32 relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div class="grid lg:grid-cols-2 gap-20 items-center">
       <!-- Left Content -->
       <div>
-        <h2 class="text-4xl lg:text-5xl font-bold leading-tight text-[#191C1E] mb-12">
-          How to master your interview in
-          <span class="text-indigo-600">3 simple steps</span>
+        <h2 class="text-4xl lg:text-5xl font-extrabold leading-tight text-slate-900 mb-16">
+          Master your interview in <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">3 simple steps</span>
         </h2>
 
-        <!-- Step 1 -->
-        <div class="flex gap-5 mb-10">
-          <div
-            class="w-12 h-12 min-w-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-lg"
-          >
-            1
+        <div class="space-y-12 relative before:absolute before:inset-0 before:ml-[1.4rem] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
+          
+          <!-- Step 1 -->
+          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+            <div class="flex items-center justify-center w-12 h-12 rounded-full border border-white bg-primary-100 text-primary-600 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 font-bold text-lg z-10 transition-colors group-hover:bg-primary-600 group-hover:text-white">1</div>
+            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md transition-shadow">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Choose Your Track</h3>
+              <p class="text-slate-600 leading-relaxed">Select from Software Engineering, Product Management, or specialized interview paths tailored to your level.</p>
+            </div>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+            <div class="flex items-center justify-center w-12 h-12 rounded-full border border-white bg-primary-100 text-primary-600 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 font-bold text-lg z-10 transition-colors group-hover:bg-primary-600 group-hover:text-white">2</div>
+            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md transition-shadow">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Simulate the Session</h3>
+              <p class="text-slate-600 leading-relaxed">Engage in a full-length voice or text-based interview session with our adaptive AI interviewer.</p>
+            </div>
           </div>
 
-          <div>
-            <h3 class="text-xl font-semibold text-[#191C1E] mb-2">Choose Your Track</h3>
-
-            <p class="text-[#464554] leading-relaxed">
-              Select from Software Engineering, Product Management, Marketing, or specialized
-              interview paths.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="flex gap-5 mb-10">
-          <div
-            class="w-12 h-12 min-w-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-lg"
-          >
-            2
+          <!-- Step 3 -->
+          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+            <div class="flex items-center justify-center w-12 h-12 rounded-full border border-white bg-primary-100 text-primary-600 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 font-bold text-lg z-10 transition-colors group-hover:bg-primary-600 group-hover:text-white">3</div>
+            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white shadow-sm border border-slate-100 group-hover:shadow-md transition-shadow">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Review Performance</h3>
+              <p class="text-slate-600 leading-relaxed">Receive a detailed breakdown of your performance with actionable tips and personalized resources.</p>
+            </div>
           </div>
 
-          <div>
-            <h3 class="text-xl font-semibold text-[#191C1E] mb-2">Simulate the Session</h3>
-
-            <p class="text-[#464554] leading-relaxed">
-              Engage in a full-length video or text-based interview session with our adaptive AI
-              interviewer.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="flex gap-5">
-          <div
-            class="w-12 h-12 min-w-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-lg"
-          >
-            3
-          </div>
-
-          <div>
-            <h3 class="text-xl font-semibold text-[#191C1E] mb-2">Review Performance</h3>
-
-            <p class="text-[#464554] leading-relaxed">
-              Receive a detailed breakdown of your performance with actionable tips and personalized
-              resources.
-            </p>
-          </div>
         </div>
       </div>
 
       <!-- Right Image -->
-      <div class="relative">
-        <div class="bg-white p-4 rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.12)]">
-          <div class="rounded-[18px] overflow-hidden bg-linear-to-br from-slate-100 to-slate-200">
-            <img
-              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=900"
-              alt="Interview App"
-              class="w-full h-130 object-cover"
-            />
-          </div>
+      <div class="relative animate-fade-in-up" style="animation-delay: 0.3s;">
+        <div class="bg-gradient-to-tr from-slate-200 to-slate-100 p-2 rounded-[2rem] shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=900" alt="App interface" class="rounded-[1.5rem] w-full h-[600px] object-cover" />
         </div>
       </div>
     </div>
 
     <!-- Stats -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 mt-24 pt-14 border-t border-gray-200">
-      <div class="text-center">
-        <h3 class="text-5xl font-bold text-indigo-600 mb-3">85%</h3>
-        <p class="uppercase tracking-[2px] text-xs font-semibold text-[#464554]">
-          Hiring Success Rate
-        </p>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 mt-32 pt-16 border-t border-slate-200/60">
+      <div class="text-center group">
+        <h3 class="text-5xl font-extrabold text-slate-900 mb-3 group-hover:scale-110 transition-transform text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400 inline-block">85%</h3>
+        <p class="uppercase tracking-[0.15em] text-xs font-bold text-slate-500">Hiring Success Rate</p>
       </div>
-
-      <div class="text-center">
-        <h3 class="text-5xl font-bold text-indigo-600 mb-3">40k+</h3>
-        <p class="uppercase tracking-[2px] text-xs font-semibold text-[#464554]">
-          Interviews Hosted
-        </p>
+      <div class="text-center group">
+        <h3 class="text-5xl font-extrabold text-slate-900 mb-3 group-hover:scale-110 transition-transform text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400 inline-block">40k+</h3>
+        <p class="uppercase tracking-[0.15em] text-xs font-bold text-slate-500">Interviews Hosted</p>
       </div>
-
-      <div class="text-center">
-        <h3 class="text-5xl font-bold text-indigo-600 mb-3">120</h3>
-        <p class="uppercase tracking-[2px] text-xs font-semibold text-[#464554]">Industry Tracks</p>
+      <div class="text-center group">
+        <h3 class="text-5xl font-extrabold text-slate-900 mb-3 group-hover:scale-110 transition-transform text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400 inline-block">120</h3>
+        <p class="uppercase tracking-[0.15em] text-xs font-bold text-slate-500">Industry Tracks</p>
       </div>
-
-      <div class="text-center">
-        <h3 class="text-5xl font-bold text-indigo-600 mb-3">4.9/5</h3>
-        <p class="uppercase tracking-[2px] text-xs font-semibold text-[#464554]">User Rating</p>
+      <div class="text-center group">
+        <h3 class="text-5xl font-extrabold text-slate-900 mb-3 group-hover:scale-110 transition-transform text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400 inline-block">4.9/5</h3>
+        <p class="uppercase tracking-[0.15em] text-xs font-bold text-slate-500">User Rating</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- new-2 -->
-
-<section class="bg-[#F5F5FA] py-24">
+<!-- PRICING SECTION -->
+<section class="bg-white py-32">
   <div class="max-w-7xl mx-auto px-6">
-    <!-- Heading -->
-    <div class="text-center mb-16">
-      <h2 class="text-5xl font-bold text-[#191C1E]">Plans for every career stage</h2>
-
-      <p class="mt-4 text-lg text-[#464554]">
-        Simple, transparent pricing to help you land your dream job.
-      </p>
+    <div class="text-center mb-20 animate-fade-in-up">
+      <h2 class="text-5xl font-extrabold text-slate-900">Plans for every career stage</h2>
+      <p class="mt-6 text-xl text-slate-600">Simple, transparent pricing to help you land your dream job.</p>
     </div>
 
-    <!-- Pricing Cards -->
-    <div class="grid lg:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 gap-8 items-start">
       @for (plan of plans; track plan.name) {
-        <div
-          class="relative bg-white rounded-[28px] p-8 border border-slate-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-          [class.border-indigo-600]="plan.popular"
-          [class.border-2]="plan.popular"
-        >
-          <!-- Popular Badge -->
+        <div class="relative bg-slate-50 rounded-[2rem] p-10 border border-slate-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group flex flex-col h-full"
+             [ngClass]="plan.popular ? 'bg-slate-900 text-white border-slate-800 scale-105 shadow-xl z-10' : ''">
+          
           @if (plan.popular) {
-            <div
-              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-xs font-semibold px-4 py-1 rounded-full"
-            >
-              MOST POPULAR
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-500 to-purple-500 text-white text-xs font-bold px-6 py-2 rounded-full uppercase tracking-widest shadow-lg">
+              Most Popular
             </div>
           }
 
-          <!-- Title -->
-          <h3 class="text-4xl font-bold text-[#191C1E]">
-            {{ plan.name }}
-          </h3>
+          <h3 class="text-3xl font-bold" [ngClass]="plan.popular ? 'text-white' : 'text-slate-900'">{{ plan.name }}</h3>
+          <p class="mt-4" [ngClass]="plan.popular ? 'text-slate-300' : 'text-slate-500'">{{ plan.description }}</p>
 
-          <p class="mt-2 text-[#464554]">
-            {{ plan.description }}
-          </p>
-
-          <!-- Price -->
-          <div class="mt-8 flex items-end gap-1">
-            <span class="text-6xl font-bold text-[#191C1E]">
-              {{ plan.price }}
-            </span>
-
+          <div class="mt-8 mb-8 flex items-baseline gap-2">
+            <span class="text-6xl font-extrabold tracking-tight" [ngClass]="plan.popular ? 'text-white' : 'text-slate-900'">{{ plan.price }}</span>
             @if (plan.duration) {
-              <span class="text-[#464554] mb-2">
-                {{ plan.duration }}
-              </span>
+              <span class="font-medium" [ngClass]="plan.popular ? 'text-slate-400' : 'text-slate-500'">{{ plan.duration }}</span>
             }
           </div>
 
-          <!-- Features -->
-          <ul class="mt-8 space-y-5">
+          <ul class="space-y-5 mb-10 flex-grow">
             @for (feature of plan.features; track feature) {
-              <li class="flex items-center gap-3">
-                <div
-                  class="w-5 h-5 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs"
-                >
-                  ✓
+              <li class="flex items-start gap-4">
+                <div class="mt-1 shrink-0">
+                  <div class="w-5 h-5 rounded-full flex items-center justify-center" [ngClass]="plan.popular ? 'bg-primary-500 text-white' : 'bg-primary-100 text-primary-600'">
+                    <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none"><path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
                 </div>
-
-                <span class="text-[#464554]">
-                  {{ feature }}
-                </span>
+                <span [ngClass]="plan.popular ? 'text-slate-300' : 'text-slate-600'">{{ feature }}</span>
               </li>
             }
           </ul>
 
-          <!-- Button -->
-          <button
-            class="w-full mt-10 py-4 rounded-xl font-semibold transition-all duration-300"
-            [ngClass]="{
-              'bg-indigo-600 text-white shadow-lg hover:bg-indigo-700': plan.popular,
-              'border border-slate-400 text-slate-800 hover:bg-slate-50': !plan.popular,
-            }"
-          >
+          <button class="w-full py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300"
+                  [ngClass]="plan.popular ? 'bg-primary-500 text-white hover:bg-primary-400 shadow-[0_0_20px_rgba(99,102,241,0.4)]' : 'bg-white text-slate-900 border-2 border-slate-200 hover:border-primary-500 hover:text-primary-600'">
             {{ plan.buttonText }}
           </button>
         </div>
@@ -380,50 +297,23 @@
   </div>
 </section>
 
-<!-- new3 -->
+<!-- FAQ & CTA SECTION -->
+<section class="bg-slate-50 py-32">
+  <div class="max-w-4xl mx-auto px-6 mb-32">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-center text-slate-900 mb-16">Frequently Asked Questions</h2>
 
-<section class="bg-[#F5F5FA] py-24">
-  <div class="max-w-4xl mx-auto px-6">
-    <!-- Heading -->
-    <h2 class="text-4xl md:text-5xl font-bold text-center text-[#191C1E] mb-14">
-      Frequently Asked Questions
-    </h2>
-
-    <!-- FAQ Items -->
-    <div class="space-y-5">
+    <div class="space-y-4">
       @for (faq of faqs; track faq.question; let i = $index) {
-        <div
-          class="bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300"
-        >
-          <!-- Question -->
-          <button
-            (click)="toggleFaq(i)"
-            class="w-full flex items-center justify-between px-6 py-6 text-left"
-          >
-            <span class="text-lg font-semibold text-[#191C1E]">
-              {{ faq.question }}
-            </span>
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-5 h-5 transition-transform duration-300"
-              [class.rotate-180]="faq.isOpen"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all duration-300 hover:border-primary-300">
+          <button (click)="toggleFaq(i)" class="w-full flex items-center justify-between p-6 text-left focus:outline-none">
+            <span class="text-lg font-bold text-slate-900 pr-8">{{ faq.question }}</span>
+            <div class="shrink-0 w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center transition-transform duration-300" [class.rotate-180]="faq.isOpen" [class.bg-primary-50]="faq.isOpen" [class.text-primary-600]="faq.isOpen">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </div>
           </button>
-
-          <!-- Answer -->
+          
           @if (faq.isOpen) {
-            <div class="px-6 pb-6 text-[#464554] leading-relaxed">
+            <div class="px-6 pb-6 pt-2 text-slate-600 leading-relaxed border-t border-slate-50 animate-fade-in-up" style="animation-duration: 0.3s;">
               {{ faq.answer }}
             </div>
           }
@@ -431,8 +321,6 @@
       }
     </div>
   </div>
-
-  <!-- CTA Section -->
 
   <app-cta-banner
     title="Ready to master your next interview?"
@@ -444,3 +332,4 @@
   >
   </app-cta-banner>
 </section>
+

@@ -1,68 +1,82 @@
-<section class="bg-slate-50 min-h-screen py-12">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid lg:grid-cols-[2fr_380px] gap-10">
+<section class="bg-slate-50 min-h-screen py-24 font-sans relative overflow-hidden">
+  <!-- Dynamic Background Gradients -->
+  <div class="absolute inset-0 z-0 opacity-40">
+    <div class="absolute -top-40 right-20 w-[600px] h-[600px] bg-primary-200 rounded-full mix-blend-multiply filter blur-[120px] animate-blob"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid lg:grid-cols-[1fr_380px] gap-12 lg:gap-16">
       <!-- MAIN CONTENT -->
-      <div>
-        <!-- Category -->
-        <span class="text-xs font-semibold uppercase tracking-widest text-indigo-600">
-          {{ article.category }}
-        </span>
+      <article class="animate-fade-in-up">
+        <header class="mb-10">
+          <!-- Category & Reading Time -->
+          <div class="flex items-center gap-4 mb-6">
+            <span class="inline-flex items-center justify-center rounded-full bg-primary-50 px-3 py-1.5 text-[10px] font-bold tracking-widest text-primary-600 uppercase border border-primary-100">
+              {{ article.category }}
+            </span>
+            <span class="text-sm font-bold text-slate-400 flex items-center gap-1.5">
+               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+               5 min read
+            </span>
+          </div>
 
-        <!-- Title -->
-        <h1 class="mt-4 text-4xl md:text-5xl font-bold text-[#191C1E] leading-tight">
-          {{ article.title }}
-        </h1>
+          <!-- Title -->
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
+            {{ article.title }}
+          </h1>
 
-        <!-- Description -->
-        <p class="mt-6 text-[#464554] text-lg leading-8">
-          {{ article.description }}
-        </p>
+          <!-- Description -->
+          <p class="mt-6 text-slate-600 text-xl leading-relaxed max-w-3xl">
+            {{ article.description }}
+          </p>
 
-        <!-- Author -->
-        <div class="flex items-center justify-between mt-8 pb-8 border-b">
-          <div class="flex items-center gap-4">
-            <img
-              [src]="article.author.avatar"
-              [alt]="article.author.name"
-              class="w-14 h-14 rounded-full object-cover"
-            />
+          <!-- Author Info -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between mt-10 pb-8 border-b border-slate-200 gap-6">
+            <div class="flex items-center gap-4">
+              <img
+                [src]="article.author.avatar"
+                [alt]="article.author.name"
+                class="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md"
+              />
+              <div>
+                <h3 class="font-bold text-slate-900 text-lg">
+                  {{ article.author.name }}
+                </h3>
+                <p class="text-sm font-medium text-slate-500">
+                  {{ article.author.role }}
+                </p>
+              </div>
+            </div>
 
-            <div>
-              <h3 class="font-semibold text-[#191C1E]">
-                {{ article.author.name }}
-              </h3>
-
-              <p class="text-sm text-[#464554]">
-                {{ article.author.role }}
-              </p>
+            <div class="flex items-center gap-3">
+              <button class="w-12 h-12 rounded-full border border-slate-200 bg-white text-slate-500 hover:text-primary-600 hover:border-primary-200 hover:bg-primary-50 transition-colors flex items-center justify-center shadow-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+              </button>
+              <button class="w-12 h-12 rounded-full border border-slate-200 bg-white text-slate-500 hover:text-primary-600 hover:border-primary-200 hover:bg-primary-50 transition-colors flex items-center justify-center shadow-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+              </button>
             </div>
           </div>
-
-          <div class="flex gap-4 text-slate-400">
-            <button>♡</button>
-            <button>↗</button>
-          </div>
-        </div>
+        </header>
 
         <!-- Hero Image -->
-        <div class="mt-10">
+        <figure class="mt-10 group relative rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-200/50">
           <img
             [src]="article.heroImage"
             [alt]="article.title"
-            class="w-full rounded-2xl shadow-lg"
+            class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
           />
-        </div>
+        </figure>
 
         <!-- Content -->
-
-        <div class="prose prose-slate max-w-none mt-12">
+        <div class="prose prose-lg prose-slate max-w-none mt-16 prose-headings:font-extrabold prose-headings:text-slate-900 prose-p:text-slate-600 prose-p:leading-relaxed prose-a:text-primary-600 prose-a:font-bold hover:prose-a:text-primary-700">
           @for (section of article.sections; track section.heading) {
-            <div class="mb-12">
-              <h2 class="text-3xl font-bold text-[#191C1E]">
+            <div class="mb-14">
+              <h2 class="text-3xl font-extrabold text-slate-900 mb-6 flex items-center gap-4">
+                <span class="w-1.5 h-8 rounded-full bg-gradient-to-b from-primary-500 to-purple-500 inline-block"></span>
                 {{ section.heading }}
               </h2>
-
-              <p class="mt-4 text-[#464554] leading-8">
+              <p class="text-lg text-slate-600 leading-relaxed mb-6">
                 {{ section.content }}
               </p>
             </div>
@@ -70,139 +84,145 @@
         </div>
 
         <!-- Quote -->
-
-        <div class="border-l-4 border-indigo-600 bg-indigo-50 rounded-r-xl p-6 my-12">
-          <p class="text-lg italic text-[#464554]">
-            AI should augment human decision-making, not replace it.
+        <blockquote class="relative border-l-4 border-primary-500 bg-gradient-to-r from-primary-50 to-transparent rounded-r-2xl p-8 lg:p-10 my-16 shadow-sm">
+           <svg class="absolute top-4 left-4 w-10 h-10 text-primary-200/50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <p class="relative z-10 text-xl md:text-2xl italic font-medium text-slate-800 leading-relaxed pl-4">
+            AI should augment human decision-making, not replace it. The goal is superhuman recruiters, not robot ones.
           </p>
-        </div>
+        </blockquote>
 
         <!-- Tags -->
-
-        <div class="mt-12">
-          <h3 class="font-semibold mb-4">Tags</h3>
-
+        <div class="mt-16 pt-8 border-t border-slate-200">
+          <h3 class="font-bold text-slate-900 uppercase tracking-widest text-sm mb-6">Tags</h3>
           <div class="flex flex-wrap gap-3">
             @for (tag of article.tags; track tag) {
-              <span class="px-4 py-2 rounded-full bg-slate-100 text-sm text-[#464554]">
-                {{ tag }}
+              <span class="px-4 py-2 rounded-full bg-white border border-slate-200 text-sm font-bold text-slate-600 hover:border-primary-300 hover:text-primary-600 cursor-pointer transition-colors shadow-sm">
+                #{{ tag }}
               </span>
             }
           </div>
         </div>
 
         <!-- Social Share -->
-
-        <div class="flex justify-between items-center mt-12 py-6 border-t">
-          <h3 class="font-semibold">Share this article</h3>
-
-          <div class="flex gap-3">
-            <button class="w-10 h-10 rounded-full border">f</button>
-
-            <button class="w-10 h-10 rounded-full border">in</button>
-
-            <button class="w-10 h-10 rounded-full border">x</button>
+        <div class="flex flex-col sm:flex-row justify-between sm:items-center mt-12 py-8 border-y border-slate-200 gap-6">
+          <h3 class="font-bold text-slate-900 text-lg">Share this article</h3>
+          <div class="flex gap-4">
+            <button class="w-12 h-12 rounded-full border border-slate-200 bg-white text-slate-600 hover:bg-[#1877F2] hover:text-white hover:border-transparent transition-all shadow-sm flex items-center justify-center font-bold text-lg">
+              f
+            </button>
+            <button class="w-12 h-12 rounded-full border border-slate-200 bg-white text-slate-600 hover:bg-[#0A66C2] hover:text-white hover:border-transparent transition-all shadow-sm flex items-center justify-center font-bold text-lg">
+              in
+            </button>
+            <button class="w-12 h-12 rounded-full border border-slate-200 bg-white text-slate-600 hover:bg-black hover:text-white hover:border-transparent transition-all shadow-sm flex items-center justify-center font-bold text-lg">
+              X
+            </button>
           </div>
         </div>
-      </div>
+      </article>
 
       <!-- SIDEBAR -->
-
-      <aside class="space-y-8">
-        <!-- Newsletter -->
-
-        <div class="bg-white rounded-2xl shadow-sm p-6">
-          <h3 class="text-xl font-semibold">Stay ahead in AI</h3>
-
-          <p class="text-[#464554] mt-3 text-sm">
-            Weekly insights delivered directly to your inbox.
-          </p>
-
-          <input
-            type="email"
-            placeholder="Email Address"
-            class="w-full mt-5 px-4 py-3 border rounded-lg"
-          />
-
-          <button class="w-full mt-4 bg-indigo-600 text-white py-3 rounded-lg">Subscribe</button>
-        </div>
-
+      <aside class="space-y-10 animate-fade-in-up" style="animation-delay: 0.2s;">
         <!-- Author Card -->
-
-        <div class="bg-white rounded-2xl shadow-sm p-6">
-          <img [src]="article.author.avatar" class="w-20 h-20 rounded-full object-cover" />
-
-          <h3 class="mt-4 font-semibold">
+        <div class="bg-white rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100 p-8 text-center relative overflow-hidden group">
+           <div class="absolute top-0 inset-x-0 h-24 bg-gradient-to-r from-primary-500/20 to-purple-500/20"></div>
+          <img [src]="article.author.avatar" class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg mx-auto relative z-10" />
+          <h3 class="mt-6 font-bold text-xl text-slate-900">
             {{ article.author.name }}
           </h3>
-
-          <p class="text-indigo-600 text-sm">
+          <p class="text-primary-600 font-bold text-sm mt-1 uppercase tracking-widest">
             {{ article.author.role }}
           </p>
-
-          <p class="mt-3 text-[#464554] text-sm">
-            AI researcher focused on ethical recruiting and workforce transformation.
+          <p class="mt-4 text-slate-600 leading-relaxed text-sm">
+            AI researcher focused on ethical recruiting and workforce transformation. Helping companies build better teams.
           </p>
+          <a href="#" class="inline-flex items-center gap-2 mt-6 text-primary-600 font-bold hover:text-primary-700 transition-colors"> 
+            View Full Profile
+             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
+        </div>
 
-          <a href="#" class="inline-block mt-4 text-indigo-600"> View Profile → </a>
+        <!-- Newsletter -->
+        <div class="bg-gradient-to-br from-primary-600 to-purple-700 rounded-[2rem] shadow-xl shadow-primary-500/30 p-8 text-white relative overflow-hidden">
+          <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+          <h3 class="text-2xl font-extrabold mb-2 relative z-10">Stay ahead in AI</h3>
+          <p class="text-primary-100 text-sm leading-relaxed relative z-10">
+            Weekly insights delivered directly to your inbox. No spam, ever.
+          </p>
+          <div class="mt-6 relative z-10">
+             <input
+              type="email"
+              placeholder="Email Address"
+              class="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-primary-200 focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm"
+            />
+            <button class="w-full mt-4 bg-white text-primary-600 font-bold py-4 rounded-xl hover:bg-slate-50 transition-colors shadow-lg">
+              Subscribe Now
+            </button>
+          </div>
         </div>
 
         <!-- Trending -->
-
-        <div class="bg-white rounded-2xl shadow-sm p-6">
-          <h3 class="font-semibold text-lg mb-6">Trending Now</h3>
-
+        <div class="bg-white rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100 p-8">
+          <h3 class="font-extrabold text-xl text-slate-900 mb-8 flex items-center gap-3">
+             <span class="text-2xl">🔥</span> Trending Now
+          </h3>
           <div class="space-y-6">
-            <div class="flex gap-4">
-              <span class="font-bold text-indigo-600"> 01 </span>
-
-              <p class="text-sm">Future-Proofing HR Teams for 2030</p>
-            </div>
-
-            <div class="flex gap-4">
-              <span class="font-bold text-indigo-600"> 02 </span>
-
-              <p class="text-sm">Reducing Interview Bias Through AI</p>
-            </div>
-
-            <div class="flex gap-4">
-              <span class="font-bold text-indigo-600"> 03 </span>
-
-              <p class="text-sm">The Psychology of Candidate Experience</p>
-            </div>
+            <a href="#" class="group flex gap-4 items-start">
+              <span class="font-black text-2xl text-slate-200 group-hover:text-primary-500 transition-colors">01</span>
+              <div>
+                <h4 class="font-bold text-slate-800 group-hover:text-primary-600 transition-colors line-clamp-2">Future-Proofing HR Teams for 2030</h4>
+                <p class="text-xs text-slate-500 mt-1">4 min read</p>
+              </div>
+            </a>
+            <a href="#" class="group flex gap-4 items-start">
+              <span class="font-black text-2xl text-slate-200 group-hover:text-primary-500 transition-colors">02</span>
+              <div>
+                <h4 class="font-bold text-slate-800 group-hover:text-primary-600 transition-colors line-clamp-2">Reducing Interview Bias Through AI</h4>
+                <p class="text-xs text-slate-500 mt-1">6 min read</p>
+              </div>
+            </a>
+            <a href="#" class="group flex gap-4 items-start">
+              <span class="font-black text-2xl text-slate-200 group-hover:text-primary-500 transition-colors">03</span>
+              <div>
+                <h4 class="font-bold text-slate-800 group-hover:text-primary-600 transition-colors line-clamp-2">The Psychology of Candidate Experience</h4>
+                <p class="text-xs text-slate-500 mt-1">5 min read</p>
+              </div>
+            </a>
           </div>
         </div>
       </aside>
     </div>
 
     <!-- RELATED ARTICLES -->
-
-    <section class="mt-24">
-      <div class="flex justify-between items-center mb-10">
-        <h2 class="text-3xl font-bold">Related Articles</h2>
-
-        <a href="#" class="text-indigo-600 font-medium"> View Blog → </a>
+    <section class="mt-32 pt-16 border-t border-slate-200">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-4">
+        <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Read Next</h2>
+        <a href="#" class="inline-flex items-center gap-2 text-primary-600 font-bold hover:text-primary-700 transition-colors bg-primary-50 px-5 py-2.5 rounded-full hover:bg-primary-100"> 
+          View All Articles
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </a>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        @for (post of article.relatedArticles; track post.title) {
-          <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
-            <img [src]="post.image" [alt]="post.title" class="w-full h-56 object-cover" />
-
-            <div class="p-6">
-              <span class="text-xs uppercase tracking-wide text-indigo-600">
+        @for (post of article.relatedArticles; track post.title; let i = $index) {
+          <article class="group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 transition-all duration-300 border border-slate-100 flex flex-col animate-fade-in-up" [style.animation-delay]="i * 0.1 + 's'">
+            <div class="overflow-hidden relative h-52">
+              <img [src]="post.image" [alt]="post.title" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+            </div>
+            <div class="p-8 flex flex-col flex-1">
+              <span class="text-[10px] font-bold tracking-widest uppercase text-primary-600 mb-3">
                 {{ post.category }}
               </span>
-
-              <h3 class="mt-3 font-semibold text-lg">
+              <h3 class="font-bold text-xl text-slate-900 group-hover:text-primary-600 transition-colors line-clamp-2 leading-tight">
                 {{ post.title }}
               </h3>
-
-              <p class="mt-2 text-sm text-[#464554]">
-                {{ post.publishDate }}
-              </p>
+              <div class="mt-auto pt-6 flex items-center justify-between text-sm font-medium text-slate-500">
+                 <span>{{ post.publishDate }}</span>
+                 <span class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+                    <svg class="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                 </span>
+              </div>
             </div>
-          </div>
+          </article>
         }
       </div>
     </section>

@@ -1,39 +1,40 @@
-<section class="py-20 bg-[#F8FAFC]">
-  <div class="max-w-5xl mx-auto px-6 text-center">
+<section class="relative py-24 bg-slate-50 overflow-hidden min-h-[60vh] flex items-center">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-0 -left-20 w-96 h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-[80px] opacity-40 animate-blob"></div>
+    <div class="absolute bottom-0 -right-20 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-[80px] opacity-40 animate-blob animation-delay-2000"></div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-6 text-center relative z-10 animate-fade-in-up">
     <!-- Badge -->
-    <div
-      class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 bg-white text-[12px] font-medium text-[#464554]"
-    >
-      <span class="w-2 h-2 rounded-full bg-indigo-600"></span>
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary-100 bg-primary-50/50 backdrop-blur-sm text-xs font-bold text-primary-600 uppercase tracking-widest shadow-sm">
+      <span class="relative flex h-2.5 w-2.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-600"></span>
+      </span>
       NEXT-GEN INTERVIEW INTELLIGENCE
     </div>
 
     <!-- Heading -->
-    <h1
-      class="mt-6 text-[58px] md:text-[36px] lg:text-[58px] font-bold leading-[1.1] tracking-[-0.03em] text-[#191C1E]"
-    >
+    <h1 class="mt-8 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-slate-900">
       Empower your hiring with
-      <span class="text-[#4F46E5]"> AI Precision </span>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">AI Precision</span>
     </h1>
 
     <!-- Description -->
-    <p class="mt-6 max-w-3xl mx-auto text-[18px] leading-7.5 text-[#64748B]">
-      Explore the sophisticated suite of tools designed to transform candidate evaluation from a
-      manual task into a data-driven science.
+    <p class="mt-8 max-w-2xl mx-auto text-xl leading-relaxed text-slate-600">
+      Explore the sophisticated suite of tools designed to transform candidate evaluation from a manual task into a data-driven science.
     </p>
   </div>
 </section>
 
-<section class="py-10 bg-gray-50">
+<section class="py-24 bg-white relative">
   <div class="max-w-7xl mx-auto px-6">
     @for (section of featureHighlights; track section.title; let i = $index) {
-      <div class="grid lg:grid-cols-2 gap-12 items-center mb-18">
-        <!-- Alternate Layout -->
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-32 last:mb-0 animate-fade-in-up" [style.animation-delay]="i * 0.1 + 's'">
         <ng-container
           [ngTemplateOutlet]="i % 2 === 0 ? contentFirst : imageFirst"
           [ngTemplateOutletContext]="{ section: section }"
-        >
-        </ng-container>
+        ></ng-container>
       </div>
     }
   </div>
@@ -41,36 +42,30 @@
 
 <!-- Content First -->
 <ng-template #contentFirst let-section="section">
-  <div>
-    <p class="text-xs font-semibold uppercase tracking-widest text-indigo-600">
+  <div class="order-2 lg:order-1 pr-0 lg:pr-8">
+    <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-xs font-bold uppercase tracking-widest border border-primary-100 mb-6">
       {{ section.tag }}
-    </p>
+    </div>
 
-    <h2 class="text-4xl font-bold mt-3">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
       {{ section.title }}
     </h2>
 
-    <p class="mt-4 text-gray-600 leading-7">
+    <p class="mt-6 text-lg text-slate-600 leading-relaxed">
       {{ section.description }}
     </p>
 
     @if (section.features) {
-      <div class="space-y-4 mt-8">
+      <div class="space-y-6 mt-10">
         @for (feature of section.features; track feature.title) {
-          <div class="bg-white rounded-xl p-5 shadow-sm">
-            <div class="flex gap-4">
-              <span class="text-xl">
-                {{ feature.icon }}
-              </span>
-
+          <div class="group bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-primary-500/10 hover:-translate-y-1 transition-all duration-300">
+            <div class="flex gap-5">
+              <div class="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                <span class="text-2xl">{{ feature.icon }}</span>
+              </div>
               <div>
-                <h4 class="font-semibold">
-                  {{ feature.title }}
-                </h4>
-
-                <p class="text-sm text-gray-500 mt-1">
-                  {{ feature.description }}
-                </p>
+                <h4 class="font-bold text-lg text-slate-900">{{ feature.title }}</h4>
+                <p class="text-slate-600 mt-2 leading-relaxed">{{ feature.description }}</p>
               </div>
             </div>
           </div>
@@ -79,14 +74,13 @@
     }
 
     @if (section.stats) {
-      <div class="grid grid-cols-2 gap-4 mt-8">
+      <div class="grid grid-cols-2 gap-6 mt-10">
         @for (stat of section.stats; track stat.label) {
-          <div class="bg-white rounded-xl p-5">
-            <div class="text-indigo-600 font-bold text-xl">
+          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 text-center hover:bg-white hover:shadow-lg transition-all duration-300">
+            <div class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600 mb-2">
               {{ stat.value }}
             </div>
-
-            <div class="text-sm text-gray-500">
+            <div class="text-sm font-bold text-slate-500 uppercase tracking-wider">
               {{ stat.label }}
             </div>
           </div>
@@ -95,169 +89,131 @@
     }
 
     @if (section.linkText) {
-      <a href="#" class="inline-flex items-center gap-2 mt-6 text-indigo-600 font-medium">
+      <a href="#" class="inline-flex items-center gap-2 mt-10 text-primary-600 font-bold hover:text-primary-700 hover:gap-3 transition-all">
         {{ section.linkText }}
-        →
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
       </a>
     }
   </div>
 
-  <div>
-    <img [src]="section.image" [alt]="section.title" class="w-full rounded-2xl shadow-lg" />
+  <div class="order-1 lg:order-2 relative group">
+    <div class="absolute -inset-4 bg-gradient-to-tr from-primary-500/20 to-purple-500/20 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div class="relative bg-white p-3 rounded-[2rem] shadow-2xl border border-slate-100 transform group-hover:scale-[1.02] transition-transform duration-500">
+      <img [src]="section.image" [alt]="section.title" class="w-full h-full object-cover rounded-[1.5rem]" />
+    </div>
   </div>
 </ng-template>
 
 <!-- Image First -->
 <ng-template #imageFirst let-section="section">
-  <!-- Image -->
-  <div>
-    <img
-      [src]="section.image"
-      [alt]="section.title"
-      class="w-full h-full object-cover rounded-[20px] border border-slate-200 shadow-[0_10px_40px_rgba(2,6,23,0.12)]"
-    />
+  <div class="relative group">
+    <div class="absolute -inset-4 bg-gradient-to-tr from-primary-500/20 to-purple-500/20 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div class="relative bg-white p-3 rounded-[2rem] shadow-2xl border border-slate-100 transform group-hover:scale-[1.02] transition-transform duration-500">
+      <img [src]="section.image" [alt]="section.title" class="w-full h-full object-cover rounded-[1.5rem]" />
+    </div>
   </div>
 
-  <!-- Content -->
-  <div class="flex flex-col justify-center">
-    <p class="text-[12px] font-semibold uppercase tracking-[0.15em] text-[#4F46E5]">
+  <div class="pl-0 lg:pl-8 flex flex-col justify-center">
+    <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-xs font-bold uppercase tracking-widest border border-primary-100 mb-6 self-start">
       {{ section.tag }}
-    </p>
+    </div>
 
-    <h2
-      class="mt-3 text-[36px] font-bold leading-[57.6px] tracking-[-0.03em] text-[#191C1E] md:text-[18px] lg:text-[36px]"
-    >
+    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">
       {{ section.title }}
     </h2>
 
-    <p class="mt-4 text-[18px] leading-7.5 text-[#64748B]">
+    <p class="mt-6 text-lg text-slate-600 leading-relaxed">
       {{ section.description }}
     </p>
 
     <!-- Stats -->
-    <div class="grid grid-cols-2 gap-4 mt-8">
-      @for (stat of section.stats ?? []; track stat.label) {
-        <div
-          class="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_8px_30px_rgba(2,6,23,0.08)]"
-        >
-          <div class="text-[#4F46E5] font-bold text-[24px]">
-            {{ stat.value }}
+    @if (section.stats) {
+      <div class="grid grid-cols-2 gap-6 mt-10">
+        @for (stat of section.stats; track stat.label) {
+          <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 text-center hover:bg-white hover:shadow-lg transition-all duration-300">
+            <div class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600 mb-2">
+              {{ stat.value }}
+            </div>
+            <div class="text-sm font-bold text-slate-500 uppercase tracking-wider">
+              {{ stat.label }}
+            </div>
           </div>
-
-          <div class="mt-1 text-[11px] uppercase tracking-wide text-[#464554] font-medium">
-            {{ stat.label }}
-          </div>
-        </div>
-      }
-    </div>
+        }
+      </div>
+    }
 
     <!-- Link -->
-    <a
-      href="#"
-      class="mt-8 inline-flex items-center gap-2 text-[#4F46E5] font-medium hover:gap-3 transition-all"
-    >
+    <a href="#" class="inline-flex items-center gap-2 mt-10 text-primary-600 font-bold hover:text-primary-700 hover:gap-3 transition-all self-start">
       Explore technical assessments
-      <span>→</span>
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
     </a>
   </div>
 </ng-template>
 
-<section class="py-20 bg-[#F8FAFC]">
-  <div class="max-w-7xl mx-auto px-6">
+<section class="py-32 bg-slate-900 text-white relative overflow-hidden">
+  <div class="absolute inset-0 z-0 opacity-30">
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-600 rounded-full mix-blend-screen filter blur-[150px]"></div>
+    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-600 rounded-full mix-blend-screen filter blur-[150px]"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
     <!-- Heading -->
-    <div class="text-center max-w-4xl mx-auto">
-      <h2
-        class="mt-3 text-[42px] font-bold leading-[57.6px] tracking-[-0.03em] text-[#191C1E] md:text-[36px] lg:text-[48px]"
-      >
+    <div class="text-center max-w-4xl mx-auto animate-fade-in-up">
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">
         {{ resumeSection.title }}
       </h2>
-
-      <p class="mt-4 text-[18px] leading-7.5 text-[#64748B] max-w-2xl mx-auto">
+      <p class="mt-6 text-xl text-slate-400 max-w-2xl mx-auto">
         {{ resumeSection.subtitle }}
       </p>
     </div>
 
     <!-- Top Cards -->
-    <div class="grid md:grid-cols-3 gap-6 mt-16">
+    <div class="grid md:grid-cols-3 gap-8 mt-20 animate-fade-in-up" style="animation-delay: 0.2s;">
       @for (feature of resumeSection.features; track feature.title) {
-        <div
-          class="bg-white rounded-3xl p-8 text-center shadow-[0_10px_40px_rgba(2,6,23,0.08)] hover:shadow-[0_15px_50px_rgba(2,6,23,0.12)] transition-all duration-300"
-        >
-          <div
-            class="w-14 h-14 mx-auto rounded-2xl flex items-center justify-center bg-indigo-50 text-2xl"
-          >
+        <div class="bg-white/5 backdrop-blur-md rounded-[2rem] p-8 text-center border border-white/10 hover:bg-white/10 transition-all duration-300">
+          <div class="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center bg-gradient-to-tr from-primary-500 to-purple-500 text-white text-3xl shadow-lg mb-6">
             {{ feature.icon }}
           </div>
-
-          <h3 class="mt-6 text-[24px] font-bold text-[#191C1E]">
-            {{ feature.title }}
-          </h3>
-
-          <p class="mt-3 text-[15px] leading-7 text-[#64748B]">
-            {{ feature.description }}
-          </p>
+          <h3 class="text-2xl font-bold mb-4">{{ feature.title }}</h3>
+          <p class="text-slate-400 leading-relaxed">{{ feature.description }}</p>
         </div>
       }
     </div>
 
     <!-- Bottom Section -->
-    <div class="grid lg:grid-cols-[1.2fr_1fr] gap-8 mt-8 min-h-175">
+    <div class="grid lg:grid-cols-[1.2fr_1fr] gap-8 mt-8 animate-fade-in-up" style="animation-delay: 0.4s;">
       <!-- Left Analytics Card -->
-      <div
-        class="bg-white rounded-[28px] p-8 shadow-[0_10px_40px_rgba(2,6,23,0.08)] flex flex-col justify-between h-full"
-      >
+      <div class="bg-white rounded-[2rem] p-10 flex flex-col justify-between text-slate-900 shadow-2xl">
         <div>
-          <h3 class="text-[32px] font-bold text-[#191C1E]">Performance Analytics</h3>
-
-          <p class="mt-4 text-[#64748B] leading-7">
-            Visualize your entire hiring pipeline with predictive analytics. Forecast time-to-hire
-            and identify bottlenecks before they impact your scale.
+          <h3 class="text-3xl font-extrabold tracking-tight">Performance Analytics</h3>
+          <p class="mt-4 text-slate-600 leading-relaxed text-lg">
+            Visualize your entire hiring pipeline with predictive analytics. Forecast time-to-hire and identify bottlenecks before they impact your scale.
           </p>
         </div>
-
-        <div class="mt-8 rounded-2xl overflow-hidden shadow-[0_10px_40px_rgba(2,6,23,0.12)]">
-          <img
-            src="assets/careers/pexels-yankrukov-7698712.webp"
-            alt="Analytics"
-            class="w-full h-80 object-cover"
-          />
+        <div class="mt-10 rounded-[1.5rem] overflow-hidden shadow-2xl border border-slate-100 group">
+          <img src="assets/careers/pexels-yankrukov-7698712.webp" alt="Analytics" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700" />
         </div>
       </div>
 
       <!-- Right Column -->
-      <div class="flex flex-col justify-between items-start h-full">
+      <div class="flex flex-col gap-8 h-full">
         <!-- Purple Card -->
-        <div
-          class="w-full bg-[#4338CA] text-white rounded-[28px] p-8 shadow-[0_15px_50px_rgba(67,56,202,0.35)]"
-        >
-          <div class="text-[64px] font-bold leading-none">
-            {{ resumeSection.analytics.percentage }}
+        <div class="bg-gradient-to-br from-primary-600 to-purple-700 text-white rounded-[2rem] p-10 shadow-2xl relative overflow-hidden group">
+          <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+          <div class="relative z-10">
+            <div class="text-6xl font-black mb-4">{{ resumeSection.analytics.percentage }}</div>
+            <h4 class="text-2xl font-bold mb-4">{{ resumeSection.analytics.title }}</h4>
+            <p class="text-primary-100 leading-relaxed">{{ resumeSection.analytics.description }}</p>
           </div>
-
-          <h4 class="mt-4 text-[28px] font-bold">
-            {{ resumeSection.analytics.title }}
-          </h4>
-
-          <p class="mt-4 text-indigo-100 leading-7">
-            {{ resumeSection.analytics.description }}
-          </p>
         </div>
 
         <!-- Small Cards -->
-        <div class="grid grid-cols-2 gap-6 w-full mt-6">
+        <div class="grid grid-cols-2 gap-8 h-full">
           @for (insight of resumeSection.insights; track insight.title) {
-            <div class="bg-white rounded-3xl p-6 shadow-[0_10px_40px_rgba(2,6,23,0.08)] min-h-80">
-              <div class="text-[#4338CA] text-2xl">
-                {{ insight.icon }}
-              </div>
-
-              <h3 class="mt-4 font-semibold text-[#191C1E]">
-                {{ insight.title }}
-              </h3>
-
-              <p class="mt-3 text-sm leading-6 text-[#64748B]">
-                {{ insight.description }}
-              </p>
+            <div class="bg-white/5 backdrop-blur-md rounded-[2rem] p-8 border border-white/10 hover:bg-white/10 transition-colors flex flex-col justify-center">
+              <div class="text-primary-400 text-3xl mb-4">{{ insight.icon }}</div>
+              <h3 class="font-bold text-xl mb-3">{{ insight.title }}</h3>
+              <p class="text-slate-400 text-sm leading-relaxed">{{ insight.description }}</p>
             </div>
           }
         </div>

@@ -2,6 +2,10 @@
   <app-header></app-header>
 }
 
-<main>
+<main class="min-h-screen">
   <router-outlet></router-outlet>
 </main>
+
+@if (showLayout) {
+  <app-footer></app-footer>
+}

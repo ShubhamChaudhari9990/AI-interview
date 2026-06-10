@@ -3,10 +3,11 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
 import { Header } from '../header/header';
+import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-main-layout',
-  imports: [CommonModule, RouterOutlet, Header],
+  imports: [CommonModule, RouterOutlet, Header, Footer],
   standalone: true,
   templateUrl: './main-layout.html',
   styleUrls: ['./main-layout.css'],
@@ -19,15 +20,16 @@ export class MainLayout {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: any) => {
-        const hiddenRoutes = [
+        const hiddenPrefixes = [
           '/auth/login',
           '/auth/register',
           '/auth/check-inbox',
           '/auth/forgot-password',
           '/auth/reset-password',
+          '/dashboard'
         ];
 
-        this.showLayout = !hiddenRoutes.includes(event.urlAfterRedirects);
+        this.showLayout = !hiddenPrefixes.some(prefix => event.urlAfterRedirects.startsWith(prefix));
       });
   }
 }

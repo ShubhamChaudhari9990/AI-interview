@@ -2,7 +2,38 @@
   <app-sidebar [items]="dashboardItems"></app-sidebar>
 
   <div class="dashboard-content">
-    <div class="dashboard-hero-card">
+    <header class="app-header dashboard-only-header">
+      <div class="app-header-inner flex justify-between items-center w-full px-6 py-4 bg-white border-b border-slate-200">
+        <div class="header-center flex-1 max-w-xl">
+          <div class="search-field relative flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 w-5 h-5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="search" placeholder="Search interviews, candidates, or insights..." class="w-full pl-10 pr-4 py-2 bg-slate-100 border-none rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition-all" />
+          </div>
+        </div>
+
+        <div class="header-right flex items-center gap-4">
+          <button class="text-button text-slate-600 font-medium hover:text-primary-600 transition-colors hidden sm:block">Support</button>
+          <button class="icon-button p-2 text-slate-500 hover:text-primary-600 hover:bg-primary-50 rounded-full transition-all" aria-label="Notifications">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg>
+          </button>
+          <div class="profile-chip flex items-center gap-3 pl-4 border-l border-slate-200 cursor-pointer">
+            <div class="profile-avatar w-10 h-10 rounded-full bg-gradient-to-tr from-primary-500 to-purple-500 text-white flex items-center justify-center font-bold shadow-sm">J</div>
+            <div class="profile-details hidden md:flex flex-col">
+              <span class="profile-name text-sm font-bold text-slate-900 leading-tight">John V.</span>
+              <small class="text-[10px] font-bold text-primary-600 tracking-wider">PRO CANDIDATE</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="p-6">
+      <div class="dashboard-hero-card">
       <div class="hero-copy">
         <div class="hero-copy-text">
           <div>
@@ -215,6 +246,7 @@
         </div>
         <button class="update-resume-btn">Update Resume</button>
       </section>
+    </div>
     </div>
   </div>
 </div>

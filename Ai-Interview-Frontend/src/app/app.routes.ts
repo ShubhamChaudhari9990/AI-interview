@@ -22,7 +22,7 @@ export const routes: Routes = [
 
   // 3. Main Dashboard Features (Protected/Internal pages like http://localhost:4200/dashboard)
   {
-    path: 'landing',
+    path: 'pages',
     loadChildren: () =>
       import('./features/landing/landing.routes').then((m) => m.dashboardRoutes),
   },
